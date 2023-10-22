@@ -130,13 +130,14 @@ cmp.setup({
 })
 
 --format lsp
-local lsp_zero = require('lsp-zero')
+--maybe formatting working due to eslint config check later
+-- local lsp_zero = require('lsp-zero')
 
-lsp_zero.on_attach(function(client, bufnr)
-  lsp_zero.default_keymaps({buffer = bufnr})
-  local opts = {buffer = bufnr}
+-- lsp_zero.on_attach(function(client, bufnr)
+--   lsp_zero.default_keymaps({buffer = bufnr})
+--   local opts = {buffer = bufnr}
 
-  vim.keymap.set({'n', 'x'}, 'gq', function()
-    vim.lsp.buf.format({async = false, timeout_ms = 10000})
-  end, opts)
-end)
+--   vim.keymap.set({'n', 'x'}, 'gq', function()
+--     vim.lsp.buf.format({async = false, timeout_ms = 10000})
+--   end, opts)
+-- end)

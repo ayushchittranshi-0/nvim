@@ -76,7 +76,10 @@ return require('packer').startup(function(use)
   }
   use 'psliwka/vim-smoothie'
   use 'itchyny/lightline.vim'
+  -- for pairing
   use 'cohama/lexima.vim'
+  -- for indentation jsx and tsx
+  use 'maxmellon/vim-jsx-pretty'
   use 'junegunn/vim-peekaboo'
   use 'morhetz/gruvbox'
   use 'Mattn/emmet-vim'
