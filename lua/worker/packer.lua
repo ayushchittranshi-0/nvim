@@ -22,50 +22,66 @@ return require('packer').startup(function(use)
 	  end
   })
 
+  -- use {
+	  -- 'VonHeikemen/lsp-zero.nvim',
+	  -- branch = 'v3.x',
+	  -- requires = {
+		  -- --- Uncomment these if you want to manage LSP servers from neovim
+		  -- -- {'williamboman/mason.nvim'},
+		  -- -- {'williamboman/mason-lspconfig.nvim'},
+
+		  -- -- LSP Support
+		  -- {'neovim/nvim-lspconfig'},
+		  -- -- Autocompletion
+		  -- {'hrsh7th/nvim-cmp'},
+		  -- {'hrsh7th/cmp-nvim-lsp'},
+		  -- {'L3MON4D3/LuaSnip'},
+		  -- {
+			  -- 'hrsh7th/nvim-cmp',
+			  -- config = function ()
+				  -- require'cmp'.setup {
+					  -- snippet = {
+						  -- expand = function(args)
+							  -- require'luasnip'.lsp_expand(args.body)
+						  -- end
+					  -- },
+
+					  -- sources = {
+						  -- { name = 'luasnip' },
+						  -- -- more sources
+					  -- },
+				  -- }
+			  -- end
+		  -- },
+		  -- { 'saadparwaiz1/cmp_luasnip' } 
+	  -- }
+  -- }
   use {
-	  'VonHeikemen/lsp-zero.nvim',
-	  branch = 'v3.x',
-	  requires = {
-		  --- Uncomment these if you want to manage LSP servers from neovim
-		  -- {'williamboman/mason.nvim'},
-		  -- {'williamboman/mason-lspconfig.nvim'},
+      'VonHeikemen/lsp-zero.nvim',
+      branch = 'v3.x',
+      requires = {
+          --- Uncomment these if you want to manage LSP servers from neovim
+          -- {'williamboman/mason.nvim'},
+          -- {'williamboman/mason-lspconfig.nvim'},
 
-		  -- LSP Support
-		  {'neovim/nvim-lspconfig'},
-		  -- Autocompletion
-		  {'hrsh7th/nvim-cmp'},
-		  {'hrsh7th/cmp-nvim-lsp'},
-		  {'L3MON4D3/LuaSnip'},
-		  {
-			  'hrsh7th/nvim-cmp',
-			  config = function ()
-				  require'cmp'.setup {
-					  snippet = {
-						  expand = function(args)
-							  require'luasnip'.lsp_expand(args.body)
-						  end
-					  },
-
-					  sources = {
-						  { name = 'luasnip' },
-						  -- more sources
-					  },
-				  }
-			  end
-		  },
+          -- LSP Support
+          {'neovim/nvim-lspconfig'},
+          -- Autocompletion
+          {'hrsh7th/nvim-cmp'},
+          {'hrsh7th/cmp-nvim-lsp'},
+          {'L3MON4D3/LuaSnip'},
+          --this is not menmtioned in documentation
 		  { 'saadparwaiz1/cmp_luasnip' } 
-	  }
+      }
   }
-
   use 'psliwka/vim-smoothie'
   use 'itchyny/lightline.vim'
+  use 'cohama/lexima.vim'
   use 'junegunn/vim-peekaboo'
   use 'morhetz/gruvbox'
   use 'Mattn/emmet-vim'
   use 'tpope/vim-surround'
   use 'tpope/vim-commentary'
-  use 'jiangmiao/auto-pairs'
   use "rafamadriz/friendly-snippets"
   use "theprimeagen/harpoon"
-
   end)

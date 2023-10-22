@@ -25,8 +25,9 @@ else
 end
 
 --Common Keybindings
-vim.keymap.set("i","<C-l>", "<Esc>:w<CR>")
-vim.keymap.set("n","<C-l>", "<Esc>:w<CR>")
+--use Ctrl - [ to escape from insert mode
+vim.keymap.set("i","[[", "<Esc>:w<CR>l")
+vim.keymap.set("n","<Leader>[", "<Esc>:w<CR>")
 --Insert blank Line and space before cursor
 vim.keymap.set("n","<Leader>o","a<CR><Esc>$")
 vim.keymap.set("n","<Leader>nn","o<Esc>")
@@ -36,10 +37,15 @@ vim.keymap.set("n","<Leader>p",[[ o<Esc>p==]])
 vim.keymap.set("n","<Leader>P",[[ O<Esc>p==]])
 --Insert Comment
 vim.api.nvim_set_keymap("n" ,"<leader><space>" ,"gcc",{ noremap = false, silent = true })
+vim.api.nvim_set_keymap("v" ,"<leader><space>" ,"gc",{ noremap = false, silent = true })
 -- vim.keymap.set("n","<Leader><Space>", "<cmd>call smoothie#do("\<C-D>") <CR>")
+
+--move line above and below
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+--paste without putting ingto buffer
 vim.keymap.set("x", "<leader>p", [["_dP]])
+vim.g.user_emmet_leader_key = ','
 
 --Common set
 vim.keymap.set("n","<leader>fe",vim.cmd.Ex)
@@ -48,3 +54,4 @@ vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
+vim.cmd('set nowrap!')
