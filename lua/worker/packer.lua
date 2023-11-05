@@ -68,6 +68,7 @@ return require('packer').startup(function(use)
           {'neovim/nvim-lspconfig'},
           -- Autocompletion
           {'hrsh7th/nvim-cmp'},
+          {'hrsh7th/cmp-buffer'},
           {'hrsh7th/cmp-nvim-lsp'},
           {'L3MON4D3/LuaSnip'},
           --this is not menmtioned in documentation
@@ -87,4 +88,7 @@ return require('packer').startup(function(use)
   use 'tpope/vim-commentary'
   use "rafamadriz/friendly-snippets"
   use "theprimeagen/harpoon"
+  use 'vimwiki/vimwiki'
+  -- use 'preservim/nerdtree'
+  -- use 'Xuyuanp/nerdtree-git-plugin'
   end)
