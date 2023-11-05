@@ -1,8 +1,8 @@
 
 --Common Keybindings
 --use Ctrl - [ to escape from insert mode
-vim.keymap.set("i","]]", "<Esc>:w<CR>l")
-vim.keymap.set("n","]]", "<Esc>:w<CR>")
+vim.keymap.set("i","ll", "<Esc>:w<CR>l")
+vim.keymap.set("n","<Leader>l", "<Esc>:w<CR>")
 vim.keymap.set("i","jj", "<Esc><Right>")
 --Insert blank Line and space before cursor
 vim.keymap.set("n","<Leader>o","a<CR><Esc>$")
