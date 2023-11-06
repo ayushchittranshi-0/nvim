@@ -1,6 +1,3 @@
-vim.opt.mouse = ""
-vim.wo.number = true
-vim.wo.relativenumber = true
 --for wsl clipboard
 vim.g.clipboard = {
     name = 'WslClipboard',

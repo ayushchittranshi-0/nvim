@@ -15,7 +15,6 @@ local cmp = require('cmp')
 local cmp_action = require('lsp-zero').cmp_action()
 
 cmp.setup({
-
     preselect = 'item',
     completion = {
         completeopt = 'menu,menuone,noinsert'
@@ -23,7 +22,8 @@ cmp.setup({
   mapping = cmp.mapping.preset.insert({
     -- `Enter` key to confirm completion
     ['<CR>'] = cmp.mapping.confirm({select = true}),
-
+    ['<S-Tab>'] = cmp.mapping.select_prev_item(cmp_select),
+    ['<Tab>'] = cmp.mapping.select_next_item(cmp_select),
     -- Ctrl+Space to trigger completion menu
     ['<C-Space>'] = cmp.mapping.complete(),
 
@@ -36,7 +36,28 @@ cmp.setup({
     ['<C-d>'] = cmp.mapping.scroll_docs(4),
   })
 })
-
+ 
+        -- `/` cmdline setup.
+    cmp.setup.cmdline('/', {
+      mapping = cmp.mapping.preset.cmdline(),
+      sources = {
+        { name = 'buffer' }
+      }
+    })
+        -- `:` cmdline setup.
+    cmp.setup.cmdline(':', {
+      mapping = cmp.mapping.preset.cmdline(),
+      sources = cmp.config.sources({
+        { name = 'path' }
+      }, {
+        {
+          name = 'cmdline',
+          option = {
+            ignore_cmds = { 'Man', '!' }
+          }
+        }
+      })
+    })
 --eslint basic formatting works with this
 -- lsp_zero.format_on_save({
 --   format_opts = {

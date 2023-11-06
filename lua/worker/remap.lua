@@ -1,9 +1,8 @@
 
+vim.opt.mouse = ""
+vim.wo.number = true
+vim.wo.relativenumber = true
 --Common Keybindings
---use Ctrl - [ to escape from insert mode
-vim.keymap.set("i","ll", "<Esc>:w<CR>l")
-vim.keymap.set("n","<Leader>l", "<Esc>:w<CR>")
-vim.keymap.set("i","jj", "<Esc><Right>")
 --Insert blank Line and space before cursor
 vim.keymap.set("n","<Leader>o","a<CR><Esc>$")
 vim.keymap.set("n","<Leader>nn","o<Esc>")
@@ -15,6 +14,21 @@ vim.keymap.set("n","<Leader>P",[[ O<Esc>p==]])
 vim.api.nvim_set_keymap("n" ,"<leader><space>" ,"gcc",{ noremap = false, silent = true })
 vim.api.nvim_set_keymap("v" ,"<leader><space>" ,"gc",{ noremap = false, silent = true })
 -- vim.keymap.set("n","<Leader><Space>", "<cmd>call smoothie#do("\<C-D>") <CR>")
+
+-- To center cursor
+-- vim.keymap.set("n", "J", "mzJ`z")
+-- vim.keymap.set("n", "<C-d>", "<C-d>zz")
+-- vim.keymap.set("n", "<C-u>", "<C-u>zz")
+-- vim.keymap.set("n", "n", "nzzzv")
+-- vim.keymap.set("n", "N", "Nzzzv")
+
+--tmux
+-- vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
+
+--To copy to clipboard
+-- next greatest remap ever : asbjornHaland
+vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
+vim.keymap.set("n", "<leader>Y", [["+Y]])
 
 -- moving tabs left and right
 vim.keymap.set("n","<C-k>","gT")
@@ -35,6 +49,7 @@ vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
+vim.opt.scrolloff = 8
 vim.cmd('set nowrap!')
 
 -- Define the function to split long lines
@@ -73,9 +88,11 @@ function splitLongLinesOnSave()
 end
 
 -- Set autocommand to execute splitLongLinesOnSave on BufWritePost
-vim.api.nvim_set_keymap('n', ']]', '<Esc>:lua splitLongLines()<CR>:w<Esc>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('i', ']]', '<Esc>:lua splitLongLines()<CR>:w<Esc>', { noremap = true, silent = true })
-
+vim.api.nvim_set_keymap('n', '<Leader>k', '<Esc>:lua splitLongLines()<CR>:w<Esc>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('i', 'kk', '<Esc>:lua splitLongLines()<CR>:w<Esc>', { noremap = true, silent = true })
+-- vim.keymap.set("i","kk", "<Esc>:w<CR>l")
+-- vim.keymap.set("n","<Leader>k", "<Esc>:w<CR>")
+vim.keymap.set("i","jj", "<Esc><Right>")
 
 -- Create a key mapping for entering command mode and inserting current file path and then creating file/directory
 vim.api.nvim_set_keymap('n', '<Leader>cf', ':e %:h/', { noremap = true })
@@ -108,3 +125,4 @@ function openFileInNewTab(filepath)
 end
 
 vim.api.nvim_set_keymap('n', '<leader>ee', ':lua openFileInNewTab("/home/maugham/personalwiki/index.wiki")<CR>', { noremap = true, silent = true })
+
