@@ -77,6 +77,10 @@ return require('packer').startup(function(use)
       }
   }
   use 'psliwka/vim-smoothie'
+  -- use {
+  --       'nvim-lualine/lualine.nvim',
+  --         requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+  --     }
   use 'itchyny/lightline.vim'
   -- for pairing
   use 'cohama/lexima.vim'
