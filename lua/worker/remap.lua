@@ -55,11 +55,34 @@ vim.opt.scrolloff = 8
 vim.cmd('set nowrap!')
 
 -- Define the function to split long lines
+
 function splitLongLines()
     local current_line = vim.fn.line('.')
+    local abs_file_path = vim.fn.expand('%:p') -- Get absolute file path
     local lines = vim.api.nvim_buf_get_lines(0, 0, -1, false)
 
-    for i, line in ipairs(lines) do
+    if string.find(abs_file_path, 'maugham') then -- Changed the condition to check if 'maugham' is not found
+        for i, line in ipairs(lines) do
+            local line_length = string.len(line)
+            if line_length > 165 then
+                local last_space = 165
+                while last_space > 0 and string.sub(line, last_space, last_space) ~= ' ' do
+                    last_space = last_space - 1
+                end
+
+                if last_space > 0 then
+                    local first_part = string.sub(line, 1, last_space)
+                    local second_part = string.sub(line, last_space + 1)
+
+                    lines[i] = first_part
+                    table.insert(lines, i + 1, second_part)
+                    i = i + 1
+                end
+            end
+        end
+    else
+        local line = lines[current_line]
+
         local line_length = string.len(line)
         if line_length > 165 then
             local last_space = 165
@@ -71,9 +94,8 @@ function splitLongLines()
                 local first_part = string.sub(line, 1, last_space)
                 local second_part = string.sub(line, last_space + 1)
 
-                lines[i] = first_part
-                table.insert(lines, i + 1, second_part)
-                i = i + 1
+                lines[current_line] = first_part
+                table.insert(lines, current_line + 1, second_part)
             end
         end
     end
@@ -81,6 +103,7 @@ function splitLongLines()
     vim.api.nvim_buf_set_lines(0, 0, -1, false, lines)
     vim.fn.cursor(current_line, 0)
 end
+
 function saveFile()
     vim.cmd(':w')
 end
@@ -88,7 +111,6 @@ end
 function splitLongLinesOnSave()
     splitLongLines()
 end
-
 -- Set autocommand to execute splitLongLinesOnSave on BufWritePost
 vim.api.nvim_set_keymap('n', '<Leader>k', '<Esc>:lua splitLongLines()<CR>:w<Esc>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('i', 'kk', '<Esc>:lua splitLongLines()<CR>:w<Esc>', { noremap = true, silent = true })
