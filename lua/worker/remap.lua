@@ -150,3 +150,18 @@ end
 
 vim.api.nvim_set_keymap('n', '<leader>ee', ':lua openFileInNewTab("/home/maugham/personalwiki/index.wiki")<CR>', { noremap = true, silent = true })
 
+-- //vimwiki md format
+vim.g.vimwiki_list = {{
+    path = '~/vimwiki/',
+    syntax = 'markdown',
+    ext = '.md'
+},{
+    path = '~/writer/',
+    syntax = 'markdown',
+    ext = '.md'
+}}
+
+-- Vim configuration settings
+vim.cmd('set nocompatible')
+vim.cmd('filetype plugin on')
+vim.cmd('syntax on')
