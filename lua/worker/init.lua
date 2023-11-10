@@ -1,5 +1,10 @@
-require("worker.harpoon")
-require("worker.remap")
 require("worker.packer")
-require("worker.telescope")
 require("worker.lsp")
+require("worker.remap")
+require("worker.plugins.fugitive")
+require("worker.plugins.telescope")
+require("worker.plugins.treesitter")
+require("worker.plugins.undotree")
+require("worker.plugins.harpoon")
+require("worker.plugins.zenmode")
+

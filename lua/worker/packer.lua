@@ -1,3 +1,7 @@
+-- Vim configuration settings
+vim.cmd('set nocompatible')
+vim.cmd('filetype plugin on')
+vim.cmd('syntax on')
 -- This file can be loaded by calling `lua require('plugins')` from your init.vim
 
 -- Only required if you have packer configured as `opt`
@@ -22,7 +26,77 @@ return require('packer').startup(function(use)
 	  end
   })
 
+  use {
+      'VonHeikemen/lsp-zero.nvim',
+      branch = 'v3.x',
+      requires = {
+          --- Uncomment these if you want to manage LSP servers from neovim
+          -- {'williamboman/mason.nvim'},
+          -- {'williamboman/mason-lspconfig.nvim'},
+
+          -- LSP Support
+          {'neovim/nvim-lspconfig'},
+          -- Autocompletion
+          {'hrsh7th/nvim-cmp'},
+          {'hrsh7th/cmp-buffer'},
+          {'hrsh7th/cmp-cmdline'},
+          {'hrsh7th/cmp-path'},
+          {'hrsh7th/cmp-nvim-lsp'},
+          {'hrsh7th/cmp-nvim-lua'},
+          {'L3MON4D3/LuaSnip'},
+          --this is not menmtioned in documentation
+		  { 'saadparwaiz1/cmp_luasnip' },
+          		  -- Snippets
+		  {'L3MON4D3/LuaSnip'},
+		  {'rafamadriz/friendly-snippets'},
+      }
+  }
+
+  --  smooth scroll plugin
+  use 'psliwka/vim-smoothie'
   -- use {
+  --       'nvim-lualine/lualine.nvim',
+  --         requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+  --     }
+
+  -- statusbar
+  use 'itchyny/lightline.vim'
+
+
+  -- for pairing
+  use 'cohama/lexima.vim'
+  -- for indentation jsx and tsx
+--   use 'maxmellon/vim-jsx-pretty'
+
+--highlinting and syntax color
+-- can use jsx pretty also
+use {
+    'nvim-treesitter/nvim-treesitter',
+    run = function()
+        local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+        ts_update()
+    end,} 
+use("nvim-treesitter/nvim-treesitter-context")
+
+--Others
+use("mbbill/undotree")
+use("tpope/vim-fugitive")
+use 'junegunn/vim-peekaboo'
+  use 'morhetz/gruvbox'
+  use 'Mattn/emmet-vim'
+  use 'tpope/vim-surround'
+  use 'tpope/vim-commentary'
+  use "theprimeagen/harpoon"
+  use 'vimwiki/vimwiki'
+  use("folke/zen-mode.nvim")
+  -- use 'preservim/nerdtree'
+  -- use 'Xuyuanp/nerdtree-git-plugin'
+  end)
+
+
+
+--   old configs
+-- use {
 	  -- 'VonHeikemen/lsp-zero.nvim',
 	  -- branch = 'v3.x',
 	  -- requires = {
@@ -56,44 +130,3 @@ return require('packer').startup(function(use)
 		  -- { 'saadparwaiz1/cmp_luasnip' } 
 	  -- }
   -- }
-  use {
-      'VonHeikemen/lsp-zero.nvim',
-      branch = 'v3.x',
-      requires = {
-          --- Uncomment these if you want to manage LSP servers from neovim
-          -- {'williamboman/mason.nvim'},
-          -- {'williamboman/mason-lspconfig.nvim'},
-
-          -- LSP Support
-          {'neovim/nvim-lspconfig'},
-          -- Autocompletion
-          {'hrsh7th/nvim-cmp'},
-          {'hrsh7th/cmp-buffer'},
-          {'hrsh7th/cmp-cmdline'},
-          {'hrsh7th/cmp-nvim-lsp'},
-          {'L3MON4D3/LuaSnip'},
-          --this is not menmtioned in documentation
-		  { 'saadparwaiz1/cmp_luasnip' } 
-      }
-  }
-  use 'psliwka/vim-smoothie'
-  -- use {
-  --       'nvim-lualine/lualine.nvim',
-  --         requires = { 'nvim-tree/nvim-web-devicons', opt = true }
-  --     }
-  use 'itchyny/lightline.vim'
-  -- for pairing
-  use 'cohama/lexima.vim'
-  -- for indentation jsx and tsx
-  use 'maxmellon/vim-jsx-pretty'
-  use 'junegunn/vim-peekaboo'
-  use 'morhetz/gruvbox'
-  use 'Mattn/emmet-vim'
-  use 'tpope/vim-surround'
-  use 'tpope/vim-commentary'
-  use "rafamadriz/friendly-snippets"
-  use "theprimeagen/harpoon"
-  use 'vimwiki/vimwiki'
-  -- use 'preservim/nerdtree'
-  -- use 'Xuyuanp/nerdtree-git-plugin'
-  end)

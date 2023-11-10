@@ -161,7 +161,3 @@ vim.g.vimwiki_list = {{
     ext = '.md'
 }}
 
--- Vim configuration settings
-vim.cmd('set nocompatible')
-vim.cmd('filetype plugin on')
-vim.cmd('syntax on')
