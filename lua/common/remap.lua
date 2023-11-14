@@ -1,5 +1,5 @@
 -- Change color scheme to gruvbox
-vim.cmd[[autocmd VimEnter * colorscheme onedark_vivid]]
+vim.cmd[[autocmd VimEnter * colorscheme rose-pine-main]]
 -- Define the function to split long lines
 function formatCurrentLine()
     -- Get the current line number
@@ -159,7 +159,7 @@ function openFileInNewTab(filepath)
 end
 
 
-vim.api.nvim_set_keymap('n', '<leader>ee', ':lua openFileInNewTab("/home/maugham/personalwiki/index.md")<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>ee', ':lua openFileInNewTab("~/personalwiki/index.md")<CR>', { noremap = true, silent = true })
 
 -- //vimwiki md format
 vim.g.vimwiki_list = {{

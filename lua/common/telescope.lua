@@ -6,10 +6,10 @@ require('telescope').setup{
     defaults = {
         mappings = {
             i = {
-                ["<Tab>"] = require("telescope.actions").move_selection_next,
-                ["<S-Tab>"] = require("telescope.actions").move_selection_previous,
-                ["<C-p>"] = require("telescope.actions").toggle_selection + require("telescope.actions").move_selection_previous,
-                ["<C-n>"] = require("telescope.actions").toggle_selection + require("telescope.actions").move_selection_next,
+                ["<Tab>"] = require("telescope.actions").move_selection_previous,
+                ["<S-Tab>"] = require("telescope.actions").move_selection_next,
+                ["<C-p>"] = require("telescope.actions").toggle_selection + require("telescope.actions").move_selection_next,
+                ["<C-n>"] = require("telescope.actions").toggle_selection + require("telescope.actions").move_selection_previous,
             },
             -- n = {
             --     ["<c-s>"] = open_in_nvim_tree,
