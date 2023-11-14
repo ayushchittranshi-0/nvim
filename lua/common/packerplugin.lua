@@ -52,8 +52,9 @@ return require('packer').startup(function(use)
     --     }
 
     -- statusbar
-    use 'itchyny/lightline.vim'
-
+    -- use 'itchyny/lightline.vim'
+    use 'vim-airline/vim-airline'
+    use 'vim-airline/vim-airline-themes' 
 
     -- for pairing
     use 'cohama/lexima.vim'
