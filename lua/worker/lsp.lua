@@ -78,17 +78,23 @@ require('luasnip.loaders.from_vscode').lazy_load()
 require("luasnip").filetype_extend("javascript", { "typescriptreact" })
 
 cmp.setup({
-  sources = {
-    {name = 'nvim_lsp'},
-    {name = 'luasnip'},
-    {name = 'buffer'}
-  },
-  mapping = cmp.mapping.preset.insert({
-    ['<C-f>'] = cmp_action.luasnip_jump_forward(),
-    ['<C-b>'] = cmp_action.luasnip_jump_backward(),
-  }),
-  --- (Optional) Show source name in completion menu
-  formatting = cmp_format,
+    sources = {
+        {name = 'nvim_lsp'},
+        {name = 'luasnip'},
+        {name = 'buffer',
+            option = {
+                get_bufnrs = function()
+                    return vim.api.nvim_list_bufs()
+                end
+            }
+        }
+    },
+    mapping = cmp.mapping.preset.insert({
+        ['<C-f>'] = cmp_action.luasnip_jump_forward(),
+        ['<C-b>'] = cmp_action.luasnip_jump_backward(),
+    }),
+    --- (Optional) Show source name in completion menu
+    formatting = cmp_format,
 })
 
 --format lsp
