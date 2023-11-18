@@ -1,5 +1,5 @@
 -- Change color scheme to gruvbox
-vim.cmd[[autocmd VimEnter * colorscheme rose-pine-moon]]
+vim.cmd[[autocmd VimEnter * colorscheme gruvbox]]
 -- Define the function to split long lines
 function formatCurrentLine()
     -- Get the current line number

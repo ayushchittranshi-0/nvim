@@ -85,7 +85,7 @@ return require('packer').startup(function(use)
   })
 
 -- somewhere in your config:
-    -- use 'morhetz/gruvbox'
+    use 'morhetz/gruvbox'
     use 'Mattn/emmet-vim'
     use 'tpope/vim-surround'
     use 'tpope/vim-commentary'
