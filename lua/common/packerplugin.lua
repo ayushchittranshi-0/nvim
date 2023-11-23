@@ -2,6 +2,7 @@
 vim.cmd('set nocompatible')
 vim.cmd('filetype plugin on')
 vim.cmd('syntax on')
+
 -- This file can be loaded by calling `lua require('plugins')` from your init.vim
 
 -- Only required if you have packer configured as `opt`
@@ -69,26 +70,27 @@ return require('packer').startup(function(use)
             local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
             ts_update()
         end,} 
-    use("nvim-treesitter/nvim-treesitter-context")
+    -- use("nvim-treesitter/nvim-treesitter-context")
 
     --Others
     use("mbbill/undotree")
     use("tpope/vim-fugitive")
     use 'junegunn/vim-peekaboo'
     -- Or with configuration
-  use({
-	  'rose-pine/neovim',
-	  as = 'rose-pine',
-	  config = function()
-		  vim.cmd('colorscheme rose-pine')
-	  end
-  })
+  -- use({
+	--   'rose-pine/neovim',
+	--   as = 'rose-pine',
+	--   config = function()
+	-- 	  vim.cmd('colorscheme rose-pine')
+	--   end
+  -- })
 
 -- somewhere in your config:
     use 'morhetz/gruvbox'
     use 'Mattn/emmet-vim'
     use 'tpope/vim-surround'
     use 'tpope/vim-commentary'
+    use 'JoosepAlviste/nvim-ts-context-commentstring'
     use "theprimeagen/harpoon"
     use 'vimwiki/vimwiki'
     use("folke/zen-mode.nvim")

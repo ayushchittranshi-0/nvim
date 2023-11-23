@@ -1,9 +1,21 @@
 local lsp_zero = require('lsp-zero')
 
+vim.keymap.set('n', '<Leader>dd', vim.diagnostic.open_float)
+vim.keymap.set('n', '<Leader>dp', vim.diagnostic.goto_prev)
+vim.keymap.set('n', '<Leader>dn', vim.diagnostic.goto_next)
+
 lsp_zero.on_attach(function(client, bufnr)
-  -- see :help lsp-zero-keybindings
-  -- to learn the available actions
-  lsp_zero.default_keymaps({buffer = bufnr})
+    -- see :help lsp-zero-keybindings
+    -- to learn the available actions
+    lsp_zero.default_keymaps({buffer = bufnr})
+    local opts = {buffer = bufnr, remap = false}
+    vim.keymap.set("n", "<leader>n", function() vim.diagnostic.goto_next() end, opts)
+    vim.keymap.set("n", "<leader>p", function() vim.diagnostic.goto_prev() end, opts)
+    vim.keymap.set('n', '<space>td', vim.lsp.buf.type_definition, opts)
+    vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, opts)
+    vim.keymap.set('n', '<space>ho', vim.lsp.buf.hover, opts)
+    vim.keymap.set('i', '<C-b>', vim.lsp.buf.hover, opts)
+    vim.keymap.set('n', '<C-h>', vim.lsp.buf.signature_help, opts)
 end)
 require'lspconfig'.eslint.setup{}
 require'lspconfig'.tailwindcss.setup{}
