@@ -8,9 +8,6 @@ function formatCurrentLine()
     -- Get the content of the current line
     local line_content = vim.fn.getline(current_line)
 
-    -- Replace each space with two spaces
-    local formatted_line = line_content:gsub(' ', '  ')
-
     -- Remove trailing spaces
     formatted_line = formatted_line:gsub('%s+$', '')
 
@@ -158,6 +155,16 @@ function openFileInNewTab(filepath)
     end
 end
 
+
+local variableValue = os.getenv("SYSTEM_NAME")
+
+-- Check if the environment variable is set
+if variableValue then
+    -- Set the keymap to <leader>qq to open the Lua file in a new tab
+    vim.api.nvim_set_keymap('n', '<leader>qq', string.format(':lua openFileInNewTab("~/vimwiki/%s/index.md")<CR>', variableValue), { noremap = true, silent = true })
+else
+    print("SYSTEM_NAME is not set. Keymap not configured.")
+end
 
 vim.api.nvim_set_keymap('n', '<leader>ee', ':lua openFileInNewTab("~/personalwiki/index.md")<CR>', { noremap = true, silent = true })
 
