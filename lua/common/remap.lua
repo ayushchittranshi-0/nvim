@@ -1,12 +1,19 @@
 -- Change color scheme to gruvbox
 vim.cmd[[autocmd VimEnter * colorscheme gruvbox]]
--- Define the function to split long lines
+
+
+-- FOR WRITER
 function formatCurrentLine()
     -- Get the current line number
     local current_line = vim.fn.line('.')
     
     -- Get the content of the current line
     local line_content = vim.fn.getline(current_line)
+
+    
+    -- Replace each space with two spaces
+    local formatted_line = line_content:gsub(' ', '  ')
+
 
     -- Remove trailing spaces
     formatted_line = formatted_line:gsub('%s+$', '')
@@ -104,7 +111,7 @@ function splitLongLinesOnSave()
         splitLongLinesWriter()
         formatCurrentLine()
     else 
-        splitLongLines()
+        -- splitLongLines()
 end
 end
 
@@ -179,3 +186,5 @@ vim.g.vimwiki_list = {{
     ext = '.md'
 }}
 
+
+vim.cmd('set nohlsearch')

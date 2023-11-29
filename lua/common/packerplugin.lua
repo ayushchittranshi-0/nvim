@@ -75,6 +75,7 @@ return require('packer').startup(function(use)
     --Others
     use("mbbill/undotree")
     use("tpope/vim-fugitive")
+    use("tpope/vim-vinegar")
     use 'junegunn/vim-peekaboo'
     -- Or with configuration
   -- use({
@@ -91,7 +92,7 @@ return require('packer').startup(function(use)
     use 'tpope/vim-surround'
     use 'tpope/vim-commentary'
     use 'JoosepAlviste/nvim-ts-context-commentstring'
-    use "theprimeagen/harpoon"
+    -- use "theprimeagen/harpoon"
     use 'vimwiki/vimwiki'
     use("folke/zen-mode.nvim")
     -- use 'preservim/nerdtree'
