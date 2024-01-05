@@ -6,8 +6,8 @@ require('telescope').setup{
     defaults = {
         mappings = {
             i = {
-                ["<Tab>"] = require("telescope.actions").move_selection_previous,
-                ["<S-Tab>"] = require("telescope.actions").move_selection_next,
+                -- ["<Tab>"] = require("telescope.actions").move_selection_previous,
+                -- ["<S-Tab>"] = require("telescope.actions").move_selection_next,
                 -- ["<C-p>"] = require("telescope.actions").toggle_selection + require("telescope.actions").move_selection_next,
                 -- ["<C-n>"] = require("telescope.actions").toggle_selection + require("telescope.actions").move_selection_previous,
             },

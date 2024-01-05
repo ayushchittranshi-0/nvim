@@ -1,3 +1,4 @@
+--WE HAVE DISABLED FORMAT CURRENT LINE FOR NOW. I WILL LOOK INTO IT LATER.
 -- Change color scheme to gruvbox
 vim.cmd[[autocmd VimEnter * colorscheme gruvbox]]
 
@@ -129,8 +130,8 @@ vim.opt.scrolloff = 8
 vim.cmd('set nowrap!')
 
 -- Set autocommand to execute splitLongLinesOnSave on BufWritePost
-vim.api.nvim_set_keymap('n', '<Leader>k', '<Esc>:lua splitLongLinesOnSave()<CR>:w<Esc>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('i', 'kk', '<Esc>:lua splitLongLinesOnSave()<CR>:w<Esc>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>k', ':w<Esc>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('i', 'kk', '<Esc>:w<Esc>', { noremap = true, silent = true })
 -- vim.keymap.set("i","kk", "<Esc>:w<CR>l")
 -- vim.keymap.set("n","<Leader>k", "<Esc>:w<CR>")
 vim.keymap.set("i","jj", "<Esc><Right>")
@@ -170,7 +171,7 @@ if variableValue then
     -- Set the keymap to <leader>qq to open the Lua file in a new tab
     vim.api.nvim_set_keymap('n', '<leader>qq', string.format(':lua openFileInNewTab("~/vimwiki/%s/index.md")<CR>', variableValue), { noremap = true, silent = true })
 else
-    print("SYSTEM_NAME is not set. Keymap not configured.")
+    -- print("SYSTEM_NAME is not set. Keymap not configured.")
 end
 
 vim.api.nvim_set_keymap('n', '<leader>ee', ':lua openFileInNewTab("~/personalwiki/index.md")<CR>', { noremap = true, silent = true })
