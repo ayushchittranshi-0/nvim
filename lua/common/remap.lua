@@ -15,6 +15,7 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.scrolloff = 8
 vim.cmd('set nowrap!')
+vim.cmd('set nohlsearch')
 
 -- Set autocommand to execute splitLongLinesOnSave on BufWritePost
 vim.api.nvim_set_keymap('n', '<Leader>k', ':w<Esc>', { noremap = true, silent = true })
@@ -50,18 +51,6 @@ function openFileInNewTab(filepath)
     end
 end
 
-
-local variableValue = os.getenv("SYSTEM_NAME")
-
--- DEPRECATED WAS ORIGINALLY USING CHROMEBOOK
--- -- Check if the environment variable is set
--- if variableValue then
---     -- Set the keymap to <leader>qq to open the Lua file in a new tab
---     vim.api.nvim_set_keymap('n', '<leader>qq', string.format(':lua openFileInNewTab("~/vimwiki/%s/index.md")<CR>', variableValue), { noremap = true, silent = true })
--- else
---     -- print("SYSTEM_NAME is not set. Keymap not configured.")
--- end
-
 vim.api.nvim_set_keymap('n', '<leader>ee', ':lua openFileInNewTab("~/personalwiki/index.md")<CR>', { noremap = true, silent = true })
 
 -- //vimwiki md format
@@ -76,7 +65,6 @@ vim.g.vimwiki_list = {{
 }}
 
 
-vim.cmd('set nohlsearch')
 
 -- -- FOR WRITER
 -- function formatCurrentLine()

@@ -47,15 +47,7 @@ return require('packer').startup(function(use)
 
     --  smooth scroll plugin
     use 'psliwka/vim-smoothie'
-    -- use {
-    --       'nvim-lualine/lualine.nvim',
-    --         requires = { 'nvim-tree/nvim-web-devicons', opt = true }
-    --     }
 
-    -- statusbar
-    -- use 'itchyny/lightline.vim'
-    use 'vim-airline/vim-airline'
-    use 'vim-airline/vim-airline-themes' 
 
     -- for pairing
     use 'cohama/lexima.vim'
@@ -77,14 +69,6 @@ return require('packer').startup(function(use)
     use("tpope/vim-fugitive")
     use("tpope/vim-vinegar")
     use 'junegunn/vim-peekaboo'
-    -- Or with configuration
-  -- use({
-	--   'rose-pine/neovim',
-	--   as = 'rose-pine',
-	--   config = function()
-	-- 	  vim.cmd('colorscheme rose-pine')
-	--   end
-  -- })
 
 -- somewhere in your config:
     use 'morhetz/gruvbox'

@@ -13,7 +13,7 @@ vim.g.clipboard = {
 }
 
 --Leader should be set before using it
-vim.g.mapleader = " "
+vim.g.mapleader = ","
 local cwd = vim.fn.getcwd(-1, -1)
 require("common")
 

@@ -30,26 +30,8 @@ vim.api.nvim_set_keymap("v" ,"<leader><space>" ,"gc",{ noremap = false, silent =
 vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
--- Replace "VARIABLE_NAME" with the name of your variable
-local variableValue = os.getenv("SYSTEM_NAME")
-
-if variableValue == "chromebook"  then
-    -- Define a function to send selected text to wl-copy
-    function send_to_wl_copy()
-        local old_reg = vim.fn.getreg('"')
-        vim.fn.feedkeys('gvy', 'n')
-        vim.fn.system('wl-copy', old_reg)
-        vim.fn.setreg('"', old_reg)
-    end
-
-    -- Map the function to a key in visual mode
-    vim.api.nvim_set_keymap('x', '<Leader>v', [[:lua send_to_wl_copy()<CR>]], { noremap = true, silent = true })
-
-
-else
-    vim.keymap.set({"n", "v"}, "<leader>v", [["+p]])
-    vim.keymap.set("n", "<leader>v", [["+P]])
-end
+    vim.keymap.set({"n", "v"}, "<leader>p", [["+p]])
+    vim.keymap.set("n", "<leader>P", [["+P]])
 -- moving tabs left and right
 vim.keymap.set("n","<C-k>","gT")
 vim.keymap.set("n","<C-j>","gt")
