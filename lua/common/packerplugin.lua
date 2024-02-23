@@ -1,5 +1,8 @@
 -- Vim configuration settings
 vim.cmd('set nocompatible')
+vim.cmd('set ignorecase')
+vim.cmd('set splitright')
+vim.cmd('set splitbelow')
 vim.cmd('filetype plugin on')
 vim.cmd('syntax on')
 

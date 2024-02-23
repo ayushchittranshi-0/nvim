@@ -48,28 +48,35 @@ cmp.setup({
     ['<C-d>'] = cmp.mapping.scroll_docs(4),
   })
 })
- 
-        -- `/` cmdline setup.
-    cmp.setup.cmdline('/', {
-      mapping = cmp.mapping.preset.cmdline(),
-      sources = {
+
+-- `/` cmdline setup.
+cmp.setup.cmdline('/', {
+    preselect = 'none',
+    completion = {
+        autocomplete = false, -- Disable automatic completion
+    },
+    mapping = cmp.mapping.preset.cmdline(),
+    sources = {
         { name = 'buffer' }
-      }
-    })
-        -- `:` cmdline setup.
-    cmp.setup.cmdline(':', {
-      mapping = cmp.mapping.preset.cmdline(),
-      sources = cmp.config.sources({
+    },
+})
+-- `:` cmdline setup.
+cmp.setup.cmdline(':', {
+    mapping = cmp.mapping.preset.cmdline(),
+    completion = {
+        autocomplete = false, -- Disable automatic completion
+    },
+    sources = cmp.config.sources({
         { name = 'path' }
-      }, {
-        {
-          name = 'cmdline',
-          option = {
-            ignore_cmds = { 'Man', '!' }
-          }
-        }
-      })
-    })
+    }, {
+            {
+                name = 'cmdline',
+                option = {
+                    ignore_cmds = { 'Man', '!' }
+                }
+            }
+        })
+})
 --eslint basic formatting works with this
 -- lsp_zero.format_on_save({
 --   format_opts = {

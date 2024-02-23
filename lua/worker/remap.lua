@@ -11,8 +11,8 @@ vim.keymap.set("n","<Leader>b","i<Space><Esc>l" )
 vim.keymap.set("n","<Leader>p",[[ o<Esc>p==]])
 vim.keymap.set("n","<Leader>P",[[ O<Esc>p==]])
 --Insert Comment
-vim.api.nvim_set_keymap("n" ,"<leader><space>" ,"gcc",{ noremap = false, silent = true })
-vim.api.nvim_set_keymap("v" ,"<leader><space>" ,"gc",{ noremap = false, silent = true })
+vim.api.nvim_set_keymap("n" ,"<C-_>" ,"gcc",{ noremap = false, silent = true })
+vim.api.nvim_set_keymap("v" ,"<C-_>","gc",{ noremap = false, silent = true })
 -- vim.keymap.set("n","<Leader><Space>", "<cmd>call smoothie#do("\<C-D>") <CR>")
 
 -- To center cursor
