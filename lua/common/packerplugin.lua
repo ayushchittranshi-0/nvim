@@ -51,6 +51,7 @@ return require('packer').startup(function(use)
     --  smooth scroll plugin
     use 'psliwka/vim-smoothie'
 
+    use "derektata/lorem.nvim"
 
     -- for pairing
     use 'cohama/lexima.vim'
