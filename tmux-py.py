@@ -48,6 +48,7 @@ class TmuxSessionManager:
                 for command in commands:
                     subprocess.run(['tmux', 'send-keys', '-t', f'{session_name}:{window_name}', command, 'Enter'])
 
+            #closing first window
             command1 = f"tmux rename-window -t {session_name}:0 'default'"
             subprocess.run(command1, shell=True)
 
