@@ -48,6 +48,11 @@ class TmuxSessionManager:
                 for command in commands:
                     subprocess.run(['tmux', 'send-keys', '-t', f'{session_name}:{window_name}', command, 'Enter'])
 
+            command1 = f"tmux rename-window -t {session_name}:0 'default'"
+            subprocess.run(command1, shell=True)
+
+            command3 = f"tmux kill-window -t {session_name}:default"
+            subprocess.run(command3, shell=True)
 
             # self.move_first_window_to_last(session_name)
 
@@ -70,45 +75,103 @@ if __name__ == '__main__':
     # Define your sessions and windows here
     sessions = [
         {
-            'name': 'ch',
+            'name': 'chaabi',
             'windows': [
                 {
                     'name': 'frontend',
                     'commands': [
-                        'cd /home/peerxp/Developer/chaabi-frontend/',
+                        'cd /home/ayush-work/Developer/chaabi-frontend/',
                         'npm start',
                     ]
                 },
                 {
                     'name': 'backend',
                     'commands': [
-                        'cd /home/peerxp/Developer/chaabi-backend/',
-                        'sudo -S <<< " " docker-compose  --env-file .docker.env up',
+                        'cd /home/ayush-work/Developer/backend/chaabi-backend/',
+                        'git pull',
+                        'docker kill $(docker ps -q)',
+                        'sudo -S <<< " " docker compose  --env-file .docker.env up',
                     ]
                 },
                 {
                     'name': 'code',
                     'commands': [
-                        'cd /home/peerxp/Developer/DualPackage',
+                        'cd /home/ayush-work/Developer/chaabi-frontend/',
                         'nvim src',
                     ]
                 }
             ]
         },
+    {
+        'name': 'ff',
+        'windows': [
+            {
+                'name': 'frontend',
+                'commands': [
+                    'cd /home/ayush-work/Developer/ff/react',
+                    'npm start',
+                ]
+            },
+            {
+                'name': 'backend',
+                    'commands': [
+                        'cd /home/ayush-work/Developer/ff/backend',
+                        'git pull',
+                        'docker kill $(docker ps -q)',
+                        'sudo -S <<< " " docker-compose  --env-file .docker.env up',
+                    ]
+            },
+            {
+                'name': 'code',
+                'commands': [
+                    'cd /home/ayush-work/Developer/ff/react',
+                    'nvim .',
+                ]
+            }
+        ]
+    },
+    {
+        'name': 'avl',
+        'windows': [
+            {
+                'name': 'frontend',
+                'commands': [
+                    'cd /home/ayush-work/Developer/almff/react',
+                    'npm start',
+                ]
+            },
+            {
+                'name': 'backend',
+                'commands': [
+                    'cd /home/ayush-work/Developer/almff/backend',
+                    'git pull',
+                    'docker kill $(docker ps -q)',
+                    'sudo -S <<< " " docker-compose  --env-file .docker.env up',
+                ]
+            },
+            {
+                'name': 'code',
+                'commands': [
+                    'cd /home/ayush-work/Developer/almff/react',
+                    'nvim .',
+                ]
+            }
+        ]
+    },
         {
-            'name': 'st',
+            'name': 'rcl',
             'windows': [
                 {
                     'name': 'storybook',
                     'commands': [
-                        'cd /home/peerxp/Developer/DualPackage',
+                        'cd /home/ayush-work/Developer/react-component-library',
                         'npm run storybook',
                     ]
                 },
                 {
                     'name': 'code',
                     'commands': [
-                        'cd /home/peerxp/Developer/DualPackage',
+                        'cd /home/ayush-work/Developer/react-component-library',
                         'nvim src',
                     ]
                 }
