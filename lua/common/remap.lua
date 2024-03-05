@@ -65,7 +65,7 @@ vim.g.vimwiki_list = {{
 }}
 
 -- to open definition in new tab in js (might have to test out in other languages)
- vim.keymap.set("n", "gD", "<cmd>tab split | lua vim.lsp.buf.definition()<CR>", {})
+ vim.keymap.set("n", "gd", "<cmd>tab split | lua vim.lsp.buf.definition()<CR>", {})
 
 
 -- -- FOR WRITER
