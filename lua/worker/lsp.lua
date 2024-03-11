@@ -18,12 +18,13 @@ lsp_zero.on_attach(function(client, bufnr)
     vim.keymap.set('n', '<C-h>', vim.lsp.buf.signature_help, opts)
 end)
 require'lspconfig'.eslint.setup{}
+require'lspconfig'.html.setup{}
 require'lspconfig'.tailwindcss.setup{}
 require'lspconfig'.tsserver.setup{}
 require'lspconfig'.cssls.setup{}
 require'lspconfig'.cssmodules_ls.setup{}
 require'lspconfig'.emmet_language_server.setup({
-  filetypes = { "css", "eruby", "html", "javascript", "javascriptreact", "less", "sass", "scss", "pug", "typescriptreact" },
+  filetypes = { "css","ejs", "eruby", "html", "javascript", "javascriptreact", "less", "sass", "scss", "pug", "typescriptreact" },
   -- Read more about this options in the [vscode docs](https://code.visualstudio.com/docs/editor/emmet#_emmet-configuration).
   -- **Note:** only the options listed in the table are supported.
   init_options = {
@@ -55,7 +56,7 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 lspconfig.emmet_ls.setup({
     -- on_attach = on_attach,
     capabilities = capabilities,
-    filetypes = { "css", "eruby", "html", "javascript", "javascriptreact", "less", "sass", "scss", "svelte", "pug", "typescriptreact", "vue" },
+    filetypes = { "css","ejs", "eruby", "html", "javascript", "javascriptreact", "less", "sass", "scss", "svelte", "pug", "typescriptreact", "vue" },
     init_options = {
       html = {
         options = {
@@ -159,7 +160,32 @@ cmp.setup({
     formatting = cmp_format,
 })
 
+
+
 --format lsp
+require("conform").setup({
+    formatters_by_ft = {
+        -- Conform will run multiple formatters sequentially
+        -- Use a sub-list to run only the first available formatter
+        javascript = { { "prettier" } },
+        html = { { "prettier" } },
+        ejs  = { { "prettier" } },
+    },
+    format_on_save = { timeout_ms = 500, lsp_fallback = true },
+})
+
+vim.api.nvim_create_user_command("Format", function(args)
+  local range = nil
+  if args.count ~= -1 then
+    local end_line = vim.api.nvim_buf_get_lines(0, args.line2 - 1, args.line2, true)[1]
+    range = {
+      start = { args.line1, 0 },
+      ["end"] = { args.line2, end_line:len() },
+    }
+  end
+  require("conform").format({ async = true, lsp_fallback = true, range = range })
+end, { range = true })
+
 --maybe formatting working due to eslint config check later
 -- local lsp_zero = require('lsp-zero')
 

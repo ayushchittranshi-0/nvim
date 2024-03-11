@@ -5,6 +5,7 @@ vim.cmd('set splitright')
 vim.cmd('set splitbelow')
 vim.cmd('filetype plugin on')
 vim.cmd('syntax on')
+vim.filetype.add({ extension = { ejs = "ejs" } })
 
 -- This file can be loaded by calling `lua require('plugins')` from your init.vim
 
@@ -77,6 +78,12 @@ return require('packer').startup(function(use)
 -- somewhere in your config:
     use 'morhetz/gruvbox'
     use 'Mattn/emmet-vim'
+    use({
+        "stevearc/conform.nvim",
+        config = function()
+            require("conform").setup()
+        end,
+    })
     use 'tpope/vim-surround'
     use 'tpope/vim-commentary'
     use 'JoosepAlviste/nvim-ts-context-commentstring'
