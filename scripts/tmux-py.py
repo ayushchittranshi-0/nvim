@@ -1,5 +1,6 @@
 import subprocess
 import sys
+import os
 
 class TmuxSessionManager:
     def __init__(self):
@@ -22,16 +23,17 @@ class TmuxSessionManager:
             print('Script is running inside a tmux session')
             return True
 
-    def create_session(self, session_name, windows):
+    def create_session(self, session_name, windows,path):
+        # change directory to path variable
+        print("path is"+path)
+        os.chdir(path)
         # Check if the session already exists and switch to it i.e. dont make new one
         if self.is_session_open(session_name):
             self.switch_to_session(session_name)
 
         else:
-            # if self.is_inside_tmux():
-                # print("cant create new inside tmux")
-                # sys.exit(1)
-            # Create a new session
+
+
             subprocess.run(['tmux', 'new-session', '-d', '-s', session_name])
 
             # Create windows and run commands
@@ -48,6 +50,12 @@ class TmuxSessionManager:
                 for command in commands:
                     subprocess.run(['tmux', 'send-keys', '-t', f'{session_name}:{window_name}', command, 'Enter'])
 
+            #closing first window
+            command1 = f"tmux rename-window -t {session_name}:0 'default'"
+            subprocess.run(command1, shell=True)
+
+            command3 = f"tmux kill-window -t {session_name}:default"
+            subprocess.run(command3, shell=True)
 
             # self.move_first_window_to_last(session_name)
 
@@ -70,45 +78,126 @@ if __name__ == '__main__':
     # Define your sessions and windows here
     sessions = [
         {
-            'name': 'ch',
+            'name': 'chaabi',
+            'path': '/home/ayush-work/Developer/chaabi-frontend',
             'windows': [
                 {
                     'name': 'frontend',
                     'commands': [
-                        'cd /home/peerxp/Developer/chaabi-frontend/',
-                        'npm start',
+                        'cd /home/ayush-work/Developer/chaabi-frontend/',
+                        'BROWSER=none npm start',
                     ]
                 },
                 {
                     'name': 'backend',
                     'commands': [
-                        'cd /home/peerxp/Developer/chaabi-backend/',
-                        'sudo -S <<< " " docker-compose  --env-file .docker.env up',
+                        'cd /home/ayush-work/Developer/backend/chaabi-backend/',
+                        'git pull',
+                        'sudo -S <<< " " service docker start',
+                        'sleep 10s',
+                        'docker kill $(docker ps -q)',
+                        'sudo -S <<< " " docker compose  --env-file .docker.env up',
                     ]
                 },
                 {
                     'name': 'code',
                     'commands': [
-                        'cd /home/peerxp/Developer/DualPackage',
+                        'cd /home/ayush-work/Developer/chaabi-frontend/',
                         'nvim src',
                     ]
                 }
             ]
         },
+    {
+        'name': 'playground',
+        'windows': [
+            {
+                'name': 'playground',
+                'commands': [
+                        'cd /home/ayush-work/Developer/playground/nc',
+                        'npm start'
+                ]
+            },
+                {
+                'name': 'nvim',
+                'commands': [
+                        'cd /home/ayush-work/Developer/playground/nc',
+                        'nvim'
+                ]
+            }
+        ]
+    },
+    {
+        'name': 'ff',
+        'windows': [
+            {
+                'name': 'frontend',
+                'commands': [
+                    'cd /home/ayush-work/Developer/ff/react',
+                    'npm start',
+                ]
+            },
+            {
+                'name': 'backend',
+                    'commands': [
+                        'cd /home/ayush-work/Developer/ff/backend',
+                        'git pull',
+                        'docker kill $(docker ps -q)',
+                        'sudo -S <<< " " docker-compose  --env-file .docker.env up',
+                    ]
+            },
+            {
+                'name': 'code',
+                'commands': [
+                    'cd /home/ayush-work/Developer/ff/react',
+                    'nvim .',
+                ]
+            }
+        ]
+    },
+    {
+        'name': 'avl',
+        'windows': [
+            {
+                'name': 'frontend',
+                'commands': [
+                    'cd /home/ayush-work/Developer/almff/react',
+                    'npm start',
+                ]
+            },
+            {
+                'name': 'backend',
+                'commands': [
+                    'cd /home/ayush-work/Developer/almff/backend',
+                    'git pull',
+                    'docker kill $(docker ps -q)',
+                    'sudo -S <<< " " docker-compose  --env-file .docker.env up',
+                ]
+            },
+            {
+                'name': 'code',
+                'commands': [
+                    'cd /home/ayush-work/Developer/almff/react',
+                    'nvim .',
+                ]
+            }
+        ]
+    },
         {
-            'name': 'st',
+            'name': 'rcl',
+            'path': '/home/ayush-work/Developer/react-component-library',
             'windows': [
                 {
                     'name': 'storybook',
                     'commands': [
-                        'cd /home/peerxp/Developer/DualPackage',
-                        'npm run storybook',
+                        'cd /home/ayush-work/Developer/react-component-library',
+                        'BROWSER=none npm run storybook',
                     ]
                 },
                 {
                     'name': 'code',
                     'commands': [
-                        'cd /home/peerxp/Developer/DualPackage',
+                        'cd /home/ayush-work/Developer/react-component-library',
                         'nvim src',
                     ]
                 }
@@ -124,7 +213,7 @@ if __name__ == '__main__':
         session_name = sys.argv[1]
         for session in sessions:
             if session['name'] == session_name:
-                manager.create_session(session_name, session['windows'])
+                manager.create_session(session_name ,session['windows'],session['path'])
                 break
     else:
         print('Please provide a session name as an argument.')

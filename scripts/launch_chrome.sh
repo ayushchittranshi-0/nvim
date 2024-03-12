@@ -1,0 +1,6 @@
+cmd.exe /C start chrome "https://www.notion.so/peerxp/d8a21dc4d75a4eb4ac3991fac56d8dc8?v=dbb336bf51ec4e80b2277f34efcbbfc4" "hr.peerxp.com" --new-window --window-name="qc"
+cmd.exe /C start chrome "http://127.0.0.1:3000/" "http://localhost:6006/" --new-window --window-name="qv" 
+cmd.exe /C start chrome "youtube.com" --new-window --window-name="qy" 
+cmd.exe /C start chrome "peerxp.vegaops.com" --new-window --window-name="qg" 
+cmd.exe /C start chrome "chatgpt.peerxp.com" "https://www.edclub.com/signin" --new-window --window-name="qp" 
+cmd.exe /C start chrome "chatgpt.peerxp.com"  --new-window --window-name="qr" 
