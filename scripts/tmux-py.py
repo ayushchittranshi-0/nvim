@@ -191,7 +191,7 @@ if __name__ == '__main__':
                     'name': 'storybook',
                     'commands': [
                         'cd /home/ayush-work/Developer/react-component-library',
-                        'BROWSER=none npm run storybook',
+                        'npm run storybook',
                     ]
                 },
                 {

@@ -24,4 +24,19 @@ vim.keymap.set('n', '<leader>fs', function()
     builtin.grep_string({ search = vim.fn.input("Grep > ") })
 end)
 
+-- Lua function to search in the parent directory of the current file using Telescope
+function TelescopeSearchParent()
+    local path = vim.fn.expand('%:p:h:h') -- Get the parent directory of the current file
+    require('telescope.builtin').find_files({ cwd = path })
+end
 
+-- Lua function to search for a string in the parent directory of the current file using Telescope
+function TelescopeGrepParent()
+    local path = vim.fn.expand('%:p:h:h') -- Get the parent directory of the current file
+    require('telescope.builtin').grep_string({ search = vim.fn.input("Grep > "), cwd = path })
+end
+
+-- sp search file
+vim.api.nvim_set_keymap('n', '<Leader>sf', '<cmd>lua TelescopeSearchParent()<CR>', { noremap = true, silent = true })
+-- sg search grep
+vim.api.nvim_set_keymap('n', '<Leader>sg', '<cmd>lua TelescopeGrepParent()<CR>', { noremap = true, silent = true })

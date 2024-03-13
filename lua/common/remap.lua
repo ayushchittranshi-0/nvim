@@ -51,7 +51,17 @@ function openFileInNewTab(filepath)
     end
 end
 
-vim.api.nvim_set_keymap('n', '<leader>ee', ':lua openFileInNewTab("~/personalwiki/index.md")<CR>', { noremap = true, silent = true })
+-- Read the pc_type variable
+local pc_type = os.getenv("pc_type")
+
+-- You can now use the pc_type variable in your Lua code
+print("The pc_type variable value is: " .. pc_type)
+
+if pc_type == 'personal' then
+vim.api.nvim_set_keymap('n', '<leader>ww', ':lua openFileInNewTab("/mnt/c/Users/ayush.chittranshi_pe/Dropbox/Notes Work/Welcome.md")<CR>', { noremap = true, silent = true })
+else 
+vim.api.nvim_set_keymap('n', '<leader>ww', ':lua openFileInNewTab("/mnt/c/Users/ayush.chittranshi_pe/Dropbox/Notes Work/Welcome.md")<CR>', { noremap = true, silent = true })
+end
 
 -- //vimwiki md format
 vim.g.vimwiki_list = {{
@@ -65,9 +75,14 @@ vim.g.vimwiki_list = {{
 }}
 
 -- to open definition in new tab in js (might have to test out in other languages)
- vim.keymap.set("n", "gd", "<cmd>tab split | lua vim.lsp.buf.definition()<CR>", {})
+ vim.keymap.set("n", "gD", "<cmd>tab split | lua vim.lsp.buf.definition()<CR>", {})
 
-
+-- Lua function to close the current buffer
+function close_buffer()
+    vim.cmd('bd') -- Execute the command to delete the buffer
+end
+-- Map the custom function to a key binding (e.g., <Leader>c)
+vim.api.nvim_set_keymap('n', '<Leader>cb', '<cmd>lua close_buffer()<CR>', { noremap = true, silent = true })
 -- -- FOR WRITER
 -- function formatCurrentLine()
 --     -- Get the current line number

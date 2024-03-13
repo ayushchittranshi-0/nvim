@@ -30,8 +30,8 @@ vim.api.nvim_set_keymap("v" ,"<C-_>","gc",{ noremap = false, silent = true })
 vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
-    vim.keymap.set({"n", "v"}, "<leader>p", [["+p]])
-    vim.keymap.set("n", "<leader>P", [["+P]])
+vim.keymap.set({"n", "v"}, "<leader>p", [["+p]])
+vim.keymap.set("n", "<leader>P", [["+P]])
 -- moving tabs left and right
 vim.keymap.set("n","<C-k>","gT")
 vim.keymap.set("n","<C-j>","gt")

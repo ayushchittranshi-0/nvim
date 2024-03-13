@@ -13,7 +13,7 @@ lsp_zero.on_attach(function(client, bufnr)
     vim.keymap.set("n", "<leader>p", function() vim.diagnostic.goto_prev() end, opts)
     vim.keymap.set('n', '<space>td', vim.lsp.buf.type_definition, opts)
     vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, opts)
-    vim.keymap.set('n', '<space>ho', vim.lsp.buf.hover, opts)
+    vim.keymap.set('n', '<leader>ho', vim.lsp.buf.hover, opts)
     vim.keymap.set('i', '<C-b>', vim.lsp.buf.hover, opts)
     vim.keymap.set('n', '<C-h>', vim.lsp.buf.signature_help, opts)
 end)
@@ -170,20 +170,24 @@ require("conform").setup({
         javascript = { { "prettier" } },
         html = { { "prettier" } },
         ejs  = { { "prettier" } },
+        javascriptreact  = { { "prettier" } },
     },
     format_on_save = { timeout_ms = 500, lsp_fallback = true },
 })
 
-vim.api.nvim_create_user_command("Format", function(args)
-  local range = nil
-  if args.count ~= -1 then
-    local end_line = vim.api.nvim_buf_get_lines(0, args.line2 - 1, args.line2, true)[1]
-    range = {
-      start = { args.line1, 0 },
-      ["end"] = { args.line2, end_line:len() },
-    }
-  end
-  require("conform").format({ async = true, lsp_fallback = true, range = range })
+vim.api.nvim_create_user_command("Wf", function(args)
+    local range = nil
+    if args.count ~= -1 then
+        local end_line = vim.api.nvim_buf_get_lines(0, args.line2 - 1, args.line2, true)[1]
+        range = {
+            start = { args.line1, 0 },
+            ["end"] = { args.line2, end_line:len() },
+        }
+    end
+    require("conform").format({ async = true, lsp_fallback = true, range = range })
+    vim.defer_fn(function()
+        vim.api.nvim_command('w') -- Save the file after 1 second delay
+    end, 500)
 end, { range = true })
 
 --maybe formatting working due to eslint config check later
