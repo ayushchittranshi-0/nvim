@@ -24,16 +24,23 @@ vim.keymap.set('n', '<leader>fs', function()
     builtin.grep_string({ search = vim.fn.input("Grep > ") })
 end)
 
+local pc_type = os.getenv("pc_type")
 -- Lua function to search in the parent directory of the current file using Telescope
 function TelescopeSearchParent()
-    local path = vim.fn.expand('%:p:h:h') -- Get the parent directory of the current file
-    require('telescope.builtin').find_files({ cwd = path })
+    if pc_type == 'personal' then
+        require('telescope.builtin').find_files({ cwd = "/mnt/c/Users/Ayush/Notes Personal"})
+    else 
+        require('telescope.builtin').find_files({ cwd = "/mnt/c/Users/Ayush/Notes Personal"})
+    end
 end
 
 -- Lua function to search for a string in the parent directory of the current file using Telescope
 function TelescopeGrepParent()
-    local path = vim.fn.expand('%:p:h:h') -- Get the parent directory of the current file
-    require('telescope.builtin').grep_string({ search = vim.fn.input("Grep > "), cwd = path })
+    if pc_type == 'personal' then
+        require('telescope.builtin').grep_string({ search = vim.fn.input("Grep > "), cwd =  "/mnt/c/Users/Ayush/Notes Personal" })
+    else
+        require('telescope.builtin').grep_string({ search = vim.fn.input("Grep > "), cwd =  "/mnt/c/Users/Ayush/Notes Personal" })
+    end
 end
 
 -- sp search file
