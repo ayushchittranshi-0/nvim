@@ -58,9 +58,9 @@ local pc_type = os.getenv("pc_type")
 print("The pc_type variable value is: " .. pc_type)
 
 if pc_type == 'personal' then
-vim.api.nvim_set_keymap('n', '<leader>ww', ':lua openFileInNewTab("/mnt/c/Users/Ayush/Notes Personal/Welcome.md")<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>ww', ':lua openFileInNewTab("/mnt/c/Users/Ayush/Notes Personal/index.md")<CR>', { noremap = true, silent = true })
 else 
-vim.api.nvim_set_keymap('n', '<leader>ww', ':lua openFileInNewTab("/mnt/c/Users/ayush.chittranshi_pe/Dropbox/Notes Work/Welcome.md")<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>ww', ':lua openFileInNewTab("/mnt/c/Users/ayush.chittranshi_pe/Dropbox/Notes Work/index.md")<CR>', { noremap = true, silent = true })
 end
 
 -- //vimwiki md format

@@ -1,0 +1,5 @@
+cmd.exe /C start chrome "chatgpt.peerxp.com"  --new-window --window-name="qc" 
+cmd.exe /C start chrome "youtube.com" "https://www.edclub.com/signin" --new-window --window-name="qp" 
+cmd.exe /C start firefox "http://127.0.0.1:3000/" "http://localhost:6006/"
+cmd.exe /C start chrome "http://127.0.0.1:3000/" "http://localhost:6006/" --new-window --window-name="qv" 
+cmd.exe /C start chrome "chatgpt.peerxp.com"  --new-window --window-name="qr" 

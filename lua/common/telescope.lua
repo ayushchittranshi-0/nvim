@@ -30,7 +30,7 @@ function TelescopeSearchParent()
     if pc_type == 'personal' then
         require('telescope.builtin').find_files({ cwd = "/mnt/c/Users/Ayush/Notes Personal"})
     else 
-        require('telescope.builtin').find_files({ cwd = "/mnt/c/Users/Ayush/Notes Personal"})
+        require('telescope.builtin').find_files({ cwd = "/mnt/c/Users/ayush.chittranshi_pe/Dropbox/Notes Work/"})
     end
 end
 
@@ -39,7 +39,7 @@ function TelescopeGrepParent()
     if pc_type == 'personal' then
         require('telescope.builtin').grep_string({ search = vim.fn.input("Grep > "), cwd =  "/mnt/c/Users/Ayush/Notes Personal" })
     else
-        require('telescope.builtin').grep_string({ search = vim.fn.input("Grep > "), cwd =  "/mnt/c/Users/Ayush/Notes Personal" })
+        require('telescope.builtin').grep_string({ search = vim.fn.input("Grep > "), cwd =   "/mnt/c/Users/ayush.chittranshi_pe/Dropbox/Notes Work/"})
     end
 end
 
