@@ -140,24 +140,46 @@ local cmp_format = require('lsp-zero').cmp_format()
 require('luasnip.loaders.from_vscode').lazy_load()
 require("luasnip").filetype_extend("javascript", { "typescriptreact" })
 
+local types = require("cmp.types")
+
+local function deprioritize_snippet(entry1, entry2)
+  if entry1:get_kind() == types.lsp.CompletionItemKind.Snippet then return false end
+  if entry2:get_kind() == types.lsp.CompletionItemKind.Snippet then return true end
+end
 cmp.setup({
     sources = {
-        {name = 'nvim_lsp'},
-        {name = 'luasnip'},
         {name = 'buffer',
             option = {
                 get_bufnrs = function()
                     return vim.api.nvim_list_bufs()
                 end
             }
-        }
+        },
+        {name = 'nvim_lsp'},
+        {name = 'luasnip'}
     },
     mapping = cmp.mapping.preset.insert({
         ['<C-f>'] = cmp_action.luasnip_jump_forward(),
         ['<C-b>'] = cmp_action.luasnip_jump_backward(),
     }),
     --- (Optional) Show source name in completion menu
-    formatting = cmp_format,
+      sorting = {
+    priority_weight = 2,
+    comparators = {
+      deprioritize_snippet,
+      -- the rest of the comparators are pretty much the defaults
+      cmp.config.compare.offset,
+      cmp.config.compare.exact,
+      cmp.config.compare.scopes,
+      cmp.config.compare.score,
+      cmp.config.compare.recently_used,
+      cmp.config.compare.locality,
+      cmp.config.compare.kind,
+      cmp.config.compare.sort_text,
+      cmp.config.compare.length,
+      cmp.config.compare.order,
+    },
+    },
 })
 
 

@@ -77,7 +77,6 @@ return require('packer').startup(function(use)
 
 -- somewhere in your config:
     use 'morhetz/gruvbox'
-    use 'Mattn/emmet-vim'
     use({
         "stevearc/conform.nvim",
         config = function()

@@ -41,7 +41,6 @@ vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 --paste without putting ingto buffer
 vim.keymap.set("x", "<leader>p", [["_dP]])
-vim.g.user_emmet_leader_key = '\\'
 
 
 -- Create a key mapping for entering command mode and inserting current file path and then creating file/directory
