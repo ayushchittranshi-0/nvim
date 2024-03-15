@@ -1,7 +1,5 @@
 #!/bin/bash
 
-pc_type="$pc_type"
-
 if [ "$pc_type" == "work" ]; then  
     cmd.exe /C wt --maximized nt -p "Ubuntu"  --title "tpg" 
     cmd.exe /C wt --maximized nt -p "Ubuntu"  --title "tww" 
