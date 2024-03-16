@@ -5,4 +5,4 @@ require("worker.plugins.treesitter")
 require("worker.plugins.undotree")
 -- require("worker.plugins.harpoon")
 require("worker.plugins.zenmode")
-
+require("worker.snippets")

@@ -1,0 +1,10 @@
+{
+  "arrow function": {
+    "prefix": "haha",
+    "body": [
+      "(${1}) => {",
+      "\t${2}",
+      "}"
+    ]
+  }
+}
