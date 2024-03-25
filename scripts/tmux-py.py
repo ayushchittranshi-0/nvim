@@ -103,7 +103,7 @@ if __name__ == '__main__':
                     'name': 'code',
                     'commands': [
                         'cd /home/ayush-work/Developer/chaabi-frontend/',
-                        'nvim src',
+                        'code .',
                     ]
                 }
             ]
