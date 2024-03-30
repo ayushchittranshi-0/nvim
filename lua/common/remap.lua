@@ -63,6 +63,7 @@ else
 vim.api.nvim_set_keymap('n', '<leader>ww', ':lua openFileInNewTab("/mnt/c/Users/ayush.chittranshi_pe/Dropbox/Notes Work/index.md")<CR>', { noremap = true, silent = true })
 end
 
+vim.api.nvim_set_keymap('n', '<Leader>-', '<Plug>VimwikiRemoveHeaderLevel',{})
 -- //vimwiki md format
 vim.g.vimwiki_list = {{
     path = '~/vimwiki/',
