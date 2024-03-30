@@ -51,7 +51,7 @@ class TmuxSessionManager:
                     subprocess.run(['tmux', 'send-keys', '-t', f'{session_name}:{window_name}', command, 'Enter'])
 
             #closing first window
-            command1 = f"tmux rename-window -t {session_name}:0 'default'"
+            command1 = f"tmux rename-window -t {session_name}:1 'default'"
             subprocess.run(command1, shell=True)
 
             command3 = f"tmux kill-window -t {session_name}:default"
