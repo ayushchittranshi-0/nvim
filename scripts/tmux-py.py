@@ -109,20 +109,19 @@ if __name__ == '__main__':
             ]
         },
     {
-        'name': 'playground',
+        'name': 'pg',
+            'path': '/home/ayush-pc/Developer/playground',
         'windows': [
             {
-                'name': 'playground',
+                'name': 'editor',
                 'commands': [
-                        'cd /home/ayush-work/Developer/playground/nc',
-                        'npm start'
+                        'cd /home/ayush-work/Developer/playground/',
                 ]
             },
                 {
-                'name': 'nvim',
+                'name': 'server',
                 'commands': [
-                        'cd /home/ayush-work/Developer/playground/nc',
-                        'nvim'
+                        'cd /home/ayush-work/Developer/playground/',
                 ]
             }
         ]
@@ -202,6 +201,23 @@ if __name__ == '__main__':
                     ]
                 }
             ]
+        },
+        {
+            'name': 'nt',
+            'path': "/mnt/c/Users/Ayush/Dropbox/Notes Work",
+            'windows': [
+                {
+                    'name': 'wiki',
+                    'commands': [
+                        'nvim index.md',
+                    ]
+                },
+                {
+                    'name': 'notes bash',
+                    'commands': [
+                    ]
+                }
+            ]
         }
     ]
 
@@ -210,6 +226,17 @@ if __name__ == '__main__':
 
     # Parse the command-line argument
     if len(sys.argv) > 1:
+        # Specify the name of the environment variable you want to read
+        variable_name = "pc_type"
+
+        # Attempt to read the environment variable
+        value = os.environ.get(variable_name)
+
+        # Check if the environment variable exists
+        if value is not None:
+            print(f"The value of {variable_name} is: {value}")
+        else:
+            print(f"The environment variable {variable_name} is not set.")
         session_name = sys.argv[1]
         for session in sessions:
             if session['name'] == session_name:
