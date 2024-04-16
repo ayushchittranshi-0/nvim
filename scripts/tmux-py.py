@@ -75,6 +75,11 @@ class TmuxSessionManager:
             subprocess.run(['tmux', 'attach', '-t', session_name])
 
 if __name__ == '__main__':
+
+    variable_name = "pc_type"
+
+    # Attempt to read the environment variable
+    value = os.environ.get(variable_name)
     # Define your sessions and windows here
     sessions = [
         {
@@ -204,7 +209,7 @@ if __name__ == '__main__':
         },
         {
             'name': 'nt',
-            'path': "/mnt/c/Users/Ayush/Dropbox/Notes Work",
+            'path': "/mnt/c/Users/ayush.chittranshi_pe/Dropbox/Notes Work" if value == 'work' else "/mnt/c/Users/Ayush/Dropbox/Notes Work",
             'windows': [
                 {
                     'name': 'wiki',

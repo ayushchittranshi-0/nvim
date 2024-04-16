@@ -2,7 +2,7 @@
 
 if [ "$pc_type" == "work" ]; then  
     cmd.exe /C start chrome "youtube.com" --new-window --window-name="fy" 
-    cmd.exe /C start chrome "monkeytype.com" "https://www.edclub.com/sportal" --new-window --window-name="ft" 
+    # cmd.exe /C start chrome "monkeytype.com" "https://www.edclub.com/sportal" --new-window --window-name="ft" 
     /mnt/c/Users/ayush.chittranshi_pe/AppData/Local/slack/slack.exe
     # /mnt/c/Users/Ayush/AppData/Local/Programs/obsidian/Obsidian.exe
     cmd.exe /C start chrome "chatgpt.peerxp.com" --new-window --window-name="fc" 
