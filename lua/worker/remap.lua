@@ -1,5 +1,6 @@
 
 vim.opt.mouse = ""
+vim.opt.colorcolumn = "81"
 vim.wo.number = true
 vim.wo.relativenumber = true
 --Common Keybindings
