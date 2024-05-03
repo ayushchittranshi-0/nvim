@@ -208,8 +208,25 @@ if __name__ == '__main__':
             ]
         },
         {
-            'name': 'nt',
+            'name': 'ntw',
             'path': "/mnt/c/Users/ayush.chittranshi_pe/Dropbox/Notes Work" if value == 'work' else "/mnt/c/Users/Ayush/Dropbox/Notes Work",
+            'windows': [
+                {
+                    'name': 'wiki',
+                    'commands': [
+                        'nvim index.md',
+                    ]
+                },
+                {
+                    'name': 'notes bash',
+                    'commands': [
+                    ]
+                }
+            ]
+        },
+        {
+            'name': 'ntp',
+            'path': "/mnt/c/Users/Ayush/Notes Personal",
             'windows': [
                 {
                     'name': 'wiki',
