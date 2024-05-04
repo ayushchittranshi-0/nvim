@@ -78,6 +78,13 @@ vim.g.vimwiki_list = {{
 -- to open definition in new tab in js (might have to test out in other languages)
  vim.keymap.set("n", "gD", "<cmd>tab split | lua vim.lsp.buf.definition()<CR>", {})
 
+-- to copy file path to + register 
+vim.api.nvim_set_keymap('n', 'cp', [[:let @+=expand("%")<CR>]], { noremap = true, silent = true })
+
+
+-- to copy file path directory to + register 
+vim.api.nvim_set_keymap('n', 'cpd', [[:let @+=expand("%:h")<CR>]], { noremap = true, silent = true })
+
 -- Lua function to close the current buffer
 function close_buffer()
     vim.cmd('bd') -- Execute the command to delete the buffer
