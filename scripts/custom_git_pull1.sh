@@ -10,7 +10,10 @@
 
 
 if [ "$pc_type" == "work" ]; then  
-    echo hello
+    cd ~/.config/nvim
+    git pull
+    cp scripts/.tmux.conf ~
+    cp scripts/toggle_customizations.bat /mnt/c/Users/ayush.chittranshi_pe/
 else 
     cd ~/.config/nvim
     git pull
