@@ -1,4 +1,6 @@
 
+vim.g.airline_powerline_fonts = 1
+
 vim.opt.mouse = ""
 vim.opt.colorcolumn = "81"
 vim.wo.number = true

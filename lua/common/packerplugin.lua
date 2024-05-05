@@ -94,6 +94,8 @@ return require('packer').startup(function(use)
     use 'JoosepAlviste/nvim-ts-context-commentstring'
     -- use "theprimeagen/harpoon"
     use 'vimwiki/vimwiki'
+    use 'vim-airline/vim-airline'
+    use 'vim-airline/vim-airline-themes'
     use("folke/zen-mode.nvim")
     -- use 'preservim/nerdtree'
     -- use 'Xuyuanp/nerdtree-git-plugin'
