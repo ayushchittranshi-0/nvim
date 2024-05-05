@@ -70,14 +70,11 @@ else
    Send !j
    Run, cmd.exe /C start chrome "google.com" --new-window --window-name="frw4" 
    Run, cmd.exe /C start chrome "chat.openai.com" --new-window --window-name="fc" 
+   Run, cmd.exe /C start chrome "youtube.com" --new-window --window-name="fy" 
    Sleep 4000
    Send !j
    Run, cmd.exe /C start chrome "gmail.com" "outlook.com" --new-window --window-name="fmw5"
    Sleep 4000
-   Send !j
-   Run, cmd.exe /C wt --maximized nt -p "Ubuntu"  --title "jntww6" 
-   Run, cmd.exe /C wt --maximized nt -p "Ubuntu"  --title "jntp" 
-   Sleep 2000
    Send !k
    Send !k
    Send !k

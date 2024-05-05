@@ -115,18 +115,18 @@ if __name__ == '__main__':
         },
     {
         'name': 'pg',
-            'path': '/home/ayush-pc/Developer/playground',
+            'path': "/home/ayush-work/Developer/playground" if value == 'work' else "/home/ayush-pc/Developer/playground",
         'windows': [
             {
                 'name': 'editor',
                 'commands': [
-                        'cd /home/ayush-work/Developer/playground/',
+                        'cd /home/ayush-pc/Developer/playground/',
                 ]
             },
                 {
                 'name': 'server',
                 'commands': [
-                        'cd /home/ayush-work/Developer/playground/',
+                        'cd /home/ayush-pc/Developer/playground/',
                 ]
             }
         ]
