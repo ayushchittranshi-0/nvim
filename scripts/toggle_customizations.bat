@@ -11,7 +11,7 @@ if "%ERRORLEVEL%"=="0" (
     taskkill /F /IM "%POWERTOYS_PROCESS%"
     taskkill /F /IM "%VSCODE_PROCESS%"
     code --uninstall-extension vscodevim.vim
-    start "" "C:\Users\%USERNAME%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Visual Studio Code\Visual Studio Code.lnk"
+    start "" "C:\Users\%USERNAME%\ayush.chittranshi_pe\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Visual Studio Code\Visual Studio Code.lnk"
     if "%ERRORLEVEL%"=="0" echo Successfully terminated %POWERTOYS_PROCESS%.
     if "%ERRORLEVEL%" NEQ "0" echo Failed to terminate %POWERTOYS_PROCESS%.
 ) else (
