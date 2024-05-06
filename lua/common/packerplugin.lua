@@ -84,6 +84,7 @@ return require('packer').startup(function(use)
 -- somewhere in your config:
     -- Using Packer
     use 'navarasu/onedark.nvim'
+    use 'morhetz/gruvbox'
     use({
         "stevearc/conform.nvim",
         config = function()
