@@ -18,7 +18,7 @@ vim.cmd('set nowrap!')
 vim.cmd('set nohlsearch')
 
 -- Set autocommand to execute splitLongLinesOnSave on BufWritePost
-vim.api.nvim_set_keymap('n', '<Leader>k', ':w<Esc>', { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('n', '<Leader>k', ':w<Esc>', { noremap = true, silent = true })
 -- vim.api.nvim_set_keymap('i', 'kk', '<Esc>:w<Esc>', { noremap = true, silent = true })
 -- vim.keymap.set("i","kk", "<Esc>:Wf<CR>l")
 -- vim.keymap.set("n","<Leader>k", "<Esc>:w<CR>")
