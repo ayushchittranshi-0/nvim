@@ -1,6 +1,6 @@
 --WE HAVE DISABLED FORMAT CURRENT LINE FOR NOW. I WILL LOOK INTO IT LATER.
--- Change color scheme to gruvbox
-vim.cmd[[autocmd VimEnter * colorscheme gruvbox]]
+-- Change color scheme 
+vim.cmd[[autocmd VimEnter * colorscheme onedark]]
 
 -- ... (the rest of your code)
 

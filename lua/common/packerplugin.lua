@@ -82,7 +82,8 @@ return require('packer').startup(function(use)
     use 'junegunn/vim-peekaboo'
 
 -- somewhere in your config:
-    use 'morhetz/gruvbox'
+    -- Using Packer
+    use 'navarasu/onedark.nvim'
     use({
         "stevearc/conform.nvim",
         config = function()
