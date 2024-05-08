@@ -19,32 +19,19 @@ EnvGet, PCTypeValue, pc_type
 ; Check if the 'pc_type' variable is set to a specific value
 if (PCTypeValue = "work")
 {
-<<<<<<< Updated upstream
    Run, cmd.exe /C start chrome "google.com" --new-window --window-name="f1rw" 
    Run, cmd.exe /C start chrome "chatgpt.peerxp.com" --new-window --window-name="fc" 
-=======
-   Run, cmd.exe /C start chrome "google.com" --new-window --window-name="frw1" 
->>>>>>> Stashed changes
    Sleep 4000
    Send !j
    Run, cmd.exe /C wt --maximized nt -p "Ubuntu"  --title "j2ww" 
    Run, cmd.exe /C start chrome "peerxp.vegaops.com" --new-window --window-name="fg" 
    Sleep 4000
    Send !j
-<<<<<<< Updated upstream
    Run, cmd.exe /C start chrome "dev.to" "medium.com" --new-window --window-name="f3rw" 
    Sleep 4000
    Send !j
    Run, cmd.exe /C start firefox "http://127.0.0.1:3000/" "http://localhost:6006/" "http://127.0.0.1:8000/api/admin"
    Run, cmd.exe /C start chrome "http://127.0.0.1:3000/" "http://localhost:6006/"  "http://127.0.0.1:8000/api/admin/" --new-window --window-name="f4vw" 
-=======
-   Run, cmd.exe /C start chrome "dev.to" "medium.com" --new-window --window-name="frw3" 
-   Run, cmd.exe /C start chrome "chatgpt.peerxp.com" --new-window --window-name="fc" 
-   Sleep 4000
-   Send !j
-   Run, cmd.exe /C start firefox "http://127.0.0.1:3000/" "http://localhost:6006/" "http://127.0.0.1:8000/api/admin"
-   Run, cmd.exe /C start chrome "http://127.0.0.1:3000/" "http://localhost:6006/"  "http://127.0.0.1:8000/api/admin/" --new-window --window-name="fvw1" 
->>>>>>> Stashed changes
    Sleep 4000
    Send !j
    Run, C:\Users\ayush.chittranshi_pe\AppData\Local\slack\slack.exe
