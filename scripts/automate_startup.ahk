@@ -45,11 +45,11 @@ if (PCTypeValue = "work")
    Send !j
    ;NOTES
    Run, cmd.exe /C wt --maximized nt -p "Ubuntu"  --title "f5" 
-   Sleep 2000
+   Sleep 4000
    Send !j
    ;PLAYGROUND
    Run, cmd.exe /C wt --maximized nt -p "Ubuntu"  --title "f6"
-   Sleep 2000
+   Sleep 4000
    Send !k
    Send !k
    Send !k
@@ -83,11 +83,11 @@ else
    Send !j
    Run, cmd.exe /C wt --maximized nt -p "Ubuntu"  --title "f5" 
    Run, cmd.exe /C wt --maximized nt -p "Ubuntu"  --title "fperN" 
-   Sleep 2000
+   Sleep 4000
    Send !j
    ;PLAYGROUND
    Run, cmd.exe /C wt --maximized nt -p "Ubuntu"  --title "f6"
-   Sleep 2000
+   Sleep 4000
    Send !k
    Send !k
    Send !k

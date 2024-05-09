@@ -209,9 +209,6 @@ vim.api.nvim_create_user_command("Wf", function(args)
         }
     end
     require("conform").format({ async = true, lsp_fallback = true, range = range })
-    vim.defer_fn(function()
-        vim.api.nvim_command('w') -- Save the file after 1 second delay
-    end, 500)
 end, { range = true })
 
 vim.api.nvim_set_keymap('n', '<leader>pr', ':Wf<CR>', { noremap = true, silent = true })

@@ -44,7 +44,7 @@ telescope.setup {
 vim.keymap.set('n',  '<C-p>', builtin.find_files, {})
 vim.keymap.set('n','<leader>ff', builtin.git_files, {})
 vim.keymap.set('n', '<leader>fs', function()
-    builtin.grep_string()
+    builtin.grep_string({ search = vim.fn.input("Grep > ") })
 end)
 
 vim.api.nvim_set_keymap('n', '<Leader>fr', '<cmd>Telescope resume<CR>', { noremap = true, silent = true })
