@@ -214,6 +214,7 @@ vim.api.nvim_create_user_command("Wf", function(args)
     end, 500)
 end, { range = true })
 
+vim.api.nvim_set_keymap('n', '<leader>pr', ':Wf<CR>', { noremap = true, silent = true })
 --maybe formatting working due to eslint config check later
 -- local lsp_zero = require('lsp-zero')
 

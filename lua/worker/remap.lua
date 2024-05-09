@@ -38,6 +38,9 @@ vim.keymap.set("n", "<leader>P", [["+P]])
 -- moving tabs left and right
 vim.keymap.set("n","<C-k>","gT")
 vim.keymap.set("n","<C-j>","gt")
+vim.api.nvim_set_keymap('n', '<C-S>', ':update<CR>', { silent = true })
+vim.api.nvim_set_keymap('v', '<C-S>', '<C-C>:update<CR>', { silent = true })
+vim.api.nvim_set_keymap('i', '<C-S>', '<C-O>:update<CR>', { silent = true })
 
 --move line above and below
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
