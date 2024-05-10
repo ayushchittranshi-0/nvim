@@ -82,131 +82,123 @@ if __name__ == '__main__':
     value = os.environ.get(variable_name)
     # Define your sessions and windows here
     sessions = [
-        {
-            'name': 'chaabi',
-            'path': '/home/ayush-work/Developer/chaabi-frontend',
-            'windows': [
-                {
-                    'name': 'backends-server',
-                    'commands': [
-                        'cd /home/ayush-work/Developer/backend/chaabi-backend/',
-                        'git pull',
-                        'sudo -S <<< " " service docker start',
-                        'sleep 10s',
-                        'docker kill $(docker ps -q)',
-                        'sudo -S <<< " " docker compose  --env-file .docker.env up',
-                    ]
-                },
-                {
-                    'name': 'frontend-server',
-                    'commands': [
-                        'cd /home/ayush-work/Developer/chaabi-frontend/',
-                        'BROWSER=none npm start',
-                    ]
-                },
-                {
-                    'name': 'code',
-                    'commands': [
-                        'cd /home/ayush-work/Developer/chaabi-frontend/',
-                        'nvim src',
-                    ]
-                }
-            ]
-        },
-        {
-            'name': 'pg',
-            'path': "/home/ayush-work/Developer/playground" if value == 'work' else "/home/ayush-pc/Developer/playground",
-            'windows': [
-                {
-                    'name': 'server',
-                    'commands': [
-                        'cd /home/ayush-pc/Developer/playground/',
-                    ]
-                },
-                {
-                    'name': 'editor',
-                    'commands': [
-                        'cd /home/ayush-pc/Developer/playground/',
-                    ]
-                },
-            ]
-        },
-    {
-        'name': 'ff',
-        'windows': [
             {
-                'name': 'backends-server',
-                    'commands': [
-                        'cd /home/ayush-work/Developer/ff/backend',
-                        'git pull',
-                        'docker kill $(docker ps -q)',
-                        'sudo -S <<< " " docker-compose  --env-file .docker.env up',
-                    ]
-            },
-            {
-                'name': 'frontend-server',
-                'commands': [
-                    'cd /home/ayush-work/Developer/ff/react',
-                    'npm start',
+                'name': 'chaabi',
+                'path': '/home/ayush-work/Developer/chaabi-frontend',
+                'windows': [
+                    {
+                        'name': 'nvim',
+                        'commands': [
+                            'cd /home/ayush-work/Developer/chaabi-frontend/',
+                            'nvim src',
+                        ]
+                    },
+                    {
+                        'name': 'git',
+                        'commands': [
+                        ]
+                    },
+                    {
+                        'name': 'frontend-server',
+                        'commands': [
+                            'cd /home/ayush-work/Developer/chaabi-frontend/',
+                            'BROWSER=none npm start',
+                        ]
+                    },
+                    {
+                        'name': 'backend-server',
+                        'commands': [
+                            'cd /home/ayush-work/Developer/backend/chaabi-backend/',
+                            'git pull',
+                            'sudo -S <<< " " service docker start',
+                            'sleep 10s',
+                            'docker kill $(docker ps -q)',
+                            'sudo -S <<< " " docker compose  --env-file .docker.env up',
+                        ]
+                    }
                 ]
             },
             {
-                'name': 'code',
-                'commands': [
-                    'cd /home/ayush-work/Developer/ff/react',
-                    'nvim .',
-                ]
-            }
-        ]
-    },
-    {
-        'name': 'avl',
-        'windows': [
-            {
-                'name': 'backends-server',
-                'commands': [
-                    'cd /home/ayush-work/Developer/almff/backend',
-                    'git pull',
-                    'docker kill $(docker ps -q)',
-                    'sudo -S <<< " " docker-compose  --env-file .docker.env up',
+                'name': 'ff',
+                'windows': [
+                    {
+                        'name': 'backend-server',
+                        'commands': [
+                            'cd /home/ayush-work/Developer/ff/backend',
+                            'git pull',
+                            'docker kill $(docker ps -q)',
+                            'sudo -S <<< " " docker-compose  --env-file .docker.env up',
+                        ]
+                    },
+                    {
+                        'name': 'frontend-server',
+                        'commands': [
+                            'cd /home/ayush-work/Developer/ff/react',
+                            'npm start',
+                        ]
+                    },
+                    {
+                        'name': 'code',
+                        'commands': [
+                            'cd /home/ayush-work/Developer/ff/react',
+                            'nvim .',
+                        ]
+                    }
                 ]
             },
             {
-                'name': 'frontend-server',
-                'commands': [
-                    'cd /home/ayush-work/Developer/almff/react',
-                    'npm start',
+                'name': 'avl',
+                'windows': [
+                    {
+                        'name': 'backend-server',
+                        'commands': [
+                            'cd /home/ayush-work/Developer/almff/backend',
+                            'git pull',
+                            'docker kill $(docker ps -q)',
+                            'sudo -S <<< " " docker-compose  --env-file .docker.env up',
+                        ]
+                    },
+                    {
+                        'name': 'frontend-server',
+                        'commands': [
+                            'cd /home/ayush-work/Developer/almff/react',
+                            'npm start',
+                        ]
+                    },
+                    {
+                        'name': 'code',
+                        'commands': [
+                            'cd /home/ayush-work/Developer/almff/react',
+                            'nvim .',
+                        ]
+                    }
                 ]
             },
             {
-                'name': 'code',
-                'commands': [
-                    'cd /home/ayush-work/Developer/almff/react',
-                    'nvim .',
+                'name': 'rcl',
+                'path': '/home/ayush-work/Developer/react-component-library',
+                'windows': [
+                    {
+                        'name': 'nvim',
+                        'commands': [
+                            'cd /home/ayush-work/Developer/react-component-library',
+                            'nvim src',
+                        ]
+                    },
+                    {
+                        'name': 'git',
+                        'commands': [
+                        ]
+                    }
+                    {
+                        'name': 'storybook-server',
+                        'commands': [
+                            'cd /home/ayush-work/Developer/react-component-library',
+                            'npm run storybook',
+                        ]
+                    }
                 ]
-            }
-        ]
-    },
-        {
-            'name': 'rcl',
-            'path': '/home/ayush-work/Developer/react-component-library',
-            'windows': [
-                {
-                    'name': 'storybook-server',
-                    'commands': [
-                        'cd /home/ayush-work/Developer/react-component-library',
-                        'npm run storybook',
-                    ]
-                },
-                {
-                    'name': 'code',
-                    'commands': [
-                        'cd /home/ayush-work/Developer/react-component-library',
-                        'nvim src',
-                    ]
-                }
-            ]
-        },
+            },
         {
             'name': 'ntw',
             'path': "/mnt/c/Users/ayush.chittranshi_pe/Dropbox/Notes Work" if value == 'work' else "/mnt/c/Users/Ayush/Dropbox/Notes Work",
@@ -250,7 +242,22 @@ if __name__ == '__main__':
                 {
                     'name': 'nvim',
                     'commands': [
-                        'nvim',
+                        'nvim'
+                    ]
+                },
+                {
+                    'name': 'git',
+                    'commands': [
+                    ]
+                },
+                {
+                    'name': 'frontend-server',
+                    'commands': [
+                    ]
+                },
+                {
+                    'name': 'backend-server',
+                    'commands': [
                     ]
                 },
             ]
