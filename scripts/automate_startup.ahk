@@ -61,37 +61,36 @@ if (PCTypeValue = "work")
 else
 {
    ;RESEARCH WORKSTATION
-   Run, cmd.exe /C start chrome "dev.to" "medium.com" --start-maximized --new-window --window-name="1" 
-   Run, cmd.exe /C start chrome "chat.openai.com" --start-maximized --new-window --window-name="gpt" 
+   Run, cmd.exe /C start chrome "dev.to" "medium.com" --start-maximized --new-window --window-name="j1" 
+   Run, cmd.exe /C start chrome "chat.openai.com" --start-maximized --new-window --window-name="jgpt" 
    Sleep 4000
    Send !j
    ;PEN WORKSTATION
-   Run, cmd.exe /C wt --maximized nt -p "jbuntu"  --title "2" 
-   Run, cmd.exe /C start chrome "github.com" --start-maximized --new-window --window-name="it" 
+   Run, cmd.exe /C wt --maximized nt -p "jbuntu"  --title "j2" 
+   Run, cmd.exe /C start chrome "github.com" --start-maximized --new-window --window-name="jit" 
    Sleep 4000
    Send !j
    ;REFERENCE WORKSTATION
-   Run, cmd.exe /C start chrome "google.com" --start-maximized --new-window --window-name="3" 
-   Run, cmd.exe /C start chrome "outlook.com" "gmail.com" --start-maximized --new-window --window-name="mm"
+   Run, cmd.exe /C start chrome "google.com" --start-maximized --new-window --window-name="j3" 
    Sleep 4000
    Send !j
    ;VIEW WORKSTATION
-   Run, cmd.exe /C start chrome "http://127.0.0.1:3000/" "http://localhost:6006/"  "http://127.0.0.1:8000/api/admin/" --start-maximized --new-window --window-name="4" 
+   Run, cmd.exe /C start chrome "http://127.0.0.1:3000/" "http://localhost:6006/"  "http://127.0.0.1:8000/api/admin/" --start-maximized --new-window --window-name="j4" 
    Sleep 4000
    Send !j
-   Run, cmd.exe /C wt --maximized nt -p "jbuntu"  --title "5" 
+   Run, cmd.exe /C wt --maximized nt -p "jbuntu"  --title "j5" 
    Sleep 4000
    Send !j
    ;PLAYGROUND
-   Run, cmd.exe /C wt --maximized nt -p "jbuntu"  --title "6"
+   Run, cmd.exe /C wt --maximized nt -p "jbuntu"  --title "j6"
    Sleep 4000
-   Run, cmd.exe /C start chrome "youtube.com" --start-maximized --new-window --window-name="y" 
-   Sleep 4000
-   Send !j
-   Run, cmd.exe /C start chrome "chat.openai.com" --start-maximized --new-window --window-name="gpt" 
+   Run, cmd.exe /C start chrome "youtube.com" --start-maximized --new-window --window-name="jy" 
    Sleep 4000
    Send !j
-   Run, cmd.exe /C start chrome "outlook.com" "gmail.com" --start-maximized --new-window --window-name="mm"
+   Run, cmd.exe /C start chrome "chat.openai.com" --start-maximized --new-window --window-name="jgpt" 
+   Sleep 4000
+   Send !j
+   Run, cmd.exe /C start chrome "outlook.com" "gmail.com" --start-maximized --new-window --window-name="jmm"
    Sleep 4000
    Send !j
    Run, cmd.exe /C wt --maximized nt -p "jbuntu"  --title "perN" 
