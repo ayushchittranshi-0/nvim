@@ -231,8 +231,20 @@ if __name__ == '__main__':
                 },
             ]
         },
-{
+        {
             'name': 'vimconfig',
+            'path': "/home/ayush-work/.config/nvim" if value == 'work' else "/home/ayush-pc/.config/nvim",
+            'windows': [
+                {
+                    'name': 'nvim',
+                    'commands': [
+                        'nvim',
+                    ]
+                },
+            ]
+        },
+        {
+            'name': 'new',
             'path': "/home/ayush-work/.config/nvim" if value == 'work' else "/home/ayush-pc/.config/nvim",
             'windows': [
                 {
@@ -249,7 +261,33 @@ if __name__ == '__main__':
     manager = TmuxSessionManager()
 
     # Parse the command-line argument
-    if len(sys.argv) > 1:
+    if len(sys.argv) == 2 or len(sys.argv) == 3:
+        if len(sys.argv) == 3:
+            command = sys.argv[1]
+        # If command is 'new' but no additional name is provided or improperly used
+            if command == '-new':
+                if len(sys.argv) == 3:
+                    new_session_name = sys.argv[2]  
+                    manager = TmuxSessionManager()
+
+                    for session in sessions:
+                        if session['name'] == new_session_name:
+                            print('Cannot have the same name with preprepared config')
+                            sys.exit(1)  # Abort execution
+                    for session in sessions:
+                        if session['name'] == "new":
+                            manager.create_session(new_session_name ,session['windows'],session['path'])
+                            break
+                else:
+                    print('Error: Incorrect usage of "-new". To create a new session, use "python3 tmux-py.py -new <sessionName>".')
+                    sys.exit(1)  # Abort execution
+            else:
+                print("Invalid arguments")
+                sys.exit(1)  # Abort execution
+
+        command = sys.argv[1]
+        if command == 'new':
+            print("Invalid session name")
         # Specify the name of the environment variable you want to read
         variable_name = "pc_type"
 
