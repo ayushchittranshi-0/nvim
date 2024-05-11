@@ -189,7 +189,7 @@ if __name__ == '__main__':
                         'name': 'git',
                         'commands': [
                         ]
-                    }
+                    },
                     {
                         'name': 'storybook-server',
                         'commands': [
@@ -237,7 +237,7 @@ if __name__ == '__main__':
         },
         {
             'name': 'new',
-            'path': "/home/ayush-work/.config/nvim" if value == 'work' else "/home/ayush-pc/.config/nvim",
+            'path': ".",
             'windows': [
                 {
                     'name': 'nvim',
@@ -277,14 +277,21 @@ if __name__ == '__main__':
                     new_session_name = sys.argv[2]  
                     manager = TmuxSessionManager()
 
-                    for session in sessions:
-                        if session['name'] == new_session_name:
-                            print('Cannot have the same name with preprepared config')
-                            sys.exit(1)  # Abort execution
-                    for session in sessions:
-                        if session['name'] == "new":
-                            manager.create_session(new_session_name ,session['windows'],session['path'])
-                            break
+                    
+                    # Prompt the user for confirmation
+                    confirm = input(f"Are you sure you want to create a new session with the current path? (Press Enter to confirm): ")
+                    if confirm == '':
+                        for session in sessions:
+                            if session['name'] == new_session_name:
+                                print('Cannot have the same name with preprepared config')
+                                sys.exit(1)  # Abort execution
+                        for session in sessions:
+                            if session['name'] == "new":
+                                manager.create_session(new_session_name ,session['windows'],session['path'])
+                                break
+                    else:
+                        print('Aborting script.')
+                        sys.exit(1)  # Abort execution
                 else:
                     print('Error: Incorrect usage of "-new". To create a new session, use "python3 tmux-py.py -new <sessionName>".')
                     sys.exit(1)  # Abort execution
