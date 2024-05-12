@@ -25,8 +25,6 @@ vim.cmd('set nohlsearch')
 
 -- Useful Keymaps
 vim.keymap.set("i","jj", "<Esc><Right>")
-vim.keymap.set("n","kk", "zz")
-
 
 -- Function to open personalVimWiki in a new tab if not already opened in a tab
 function openFileInNewTab(filepath)
@@ -82,11 +80,11 @@ vim.g.vimwiki_list = {{
  vim.keymap.set("n", "gD", "<cmd>tab split | lua vim.lsp.buf.definition()<CR>", {})
 
 -- to copy file path to + register 
-vim.api.nvim_set_keymap('n', 'cp', [[:let @+=expand("%")<CR>]], { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>cp', [[:let @+=expand("%")<CR>]], { noremap = true, silent = true })
 
 
 -- to copy file path directory to + register 
-vim.api.nvim_set_keymap('n', 'cpd', [[:let @+=expand("%:h")<CR>]], { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>cd', [[:let @+=expand("%:h")<CR>]], { noremap = true, silent = true })
 
 -- Lua function to close the current buffer
 function close_buffer()
