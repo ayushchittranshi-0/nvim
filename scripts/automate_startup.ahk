@@ -62,7 +62,6 @@ else
 {
    ;RESEARCH WORKSTATION
    Run, cmd.exe /C start chrome "dev.to" "medium.com" --start-maximized --new-window --window-name="jf" 
-   Run, cmd.exe /C start chrome "chat.openai.com" --start-maximized --new-window --window-name="jc" 
    Sleep 4000
    Send !j
    ;PEN WORKSTATION

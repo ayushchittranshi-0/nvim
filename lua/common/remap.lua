@@ -22,7 +22,10 @@ vim.cmd('set nohlsearch')
 -- vim.api.nvim_set_keymap('i', 'kk', '<Esc>:w<Esc>', { noremap = true, silent = true })
 -- vim.keymap.set("i","kk", "<Esc>:Wf<CR>l")
 -- vim.keymap.set("n","<Leader>k", "<Esc>:w<CR>")
+
+-- Useful Keymaps
 vim.keymap.set("i","jj", "<Esc><Right>")
+vim.keymap.set("n","kk", "zz")
 
 
 -- Function to open personalVimWiki in a new tab if not already opened in a tab
