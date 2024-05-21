@@ -274,7 +274,13 @@ if __name__ == '__main__':
         # If command is 'new' but no additional name is provided or improperly used
             if command == '-new':
                 if len(sys.argv) == 3:
-                    new_session_name = sys.argv[2]  
+
+                    new_session_name = None
+                    if sys.argv[2] == ".":
+                        current_folder_name = os.path.basename(os.getcwd())
+                        new_session_name = current_folder_name
+                    else:
+                        new_session_name = sys.argv[2]  
                     manager = TmuxSessionManager()
 
                     
