@@ -14,10 +14,12 @@ if [ "$pc_type" == "work" ]; then
     git pull
     cp scripts/.tmux.conf ~
     cp scripts/toggle_customizations.bat /mnt/c/Users/ayush.chittranshi_pe/
+    cp -r scripts/ahk /mnt/c/Users/ayush.chittranshi_pe/
 else 
     cd ~/.config/nvim
     git pull
     cp scripts/.tmux.conf ~
     cp scripts/toggle_customizations.bat /mnt/c/Users/Ayush/
+    cp -r scripts/ahk /mnt/c/Users/Ayush/
 fi
 
