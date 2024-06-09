@@ -7,6 +7,13 @@
 # alias ntp="python3 ~/.config/nvim/scripts/tmux-py.py ntp"
 # alias pg="python3 ~/.config/nvim/scripts/tmux-py.py pg"
 # alias pull_config="chmod u+x ~/.config/nvim/scripts/custom_git_pull1.sh ; ~/.config/nvim/scripts/custom_git_pull1.sh"
+# alias tnew='python3 ~/.config/nvim/scripts/tmux-py.py -new'
+# alias vimconfig='python3 ~/.config/nvim/scripts/tmux-py.py vimconfig'
+# alias pull_config="chmod u+x ~/.config/nvim/scripts/custom_git_pull1.sh ; ~/.config/nvim/scripts/custom_git_pull1.sh"
+# export PATH="$HOME/bin:$PATH"
+# eval "$(oh-my-posh init bash)"
+# eval "$(oh-my-posh init bash --config ~/.config/nvim/scripts/maugham.omp.json)"
+
 
 
 if [ "$pc_type" == "work" ]; then  
