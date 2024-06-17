@@ -201,7 +201,8 @@ if __name__ == '__main__':
             },
         {
             'name': 'ntw',
-            'path': "/mnt/c/Users/ayush.chittranshi_pe/Dropbox/Notes Work" if value == 'work' else "/mnt/c/Users/Ayush/Dropbox/Notes Work",
+            # 'path': "/mnt/c/Users/ayush.chittranshi_pe/Dropbox/Notes Work" if value == 'work' else "/mnt/c/Users/Ayush/Dropbox/Notes Work",
+            'path': ("/mnt/c/Users/ayush.chittranshi_pe/Dropbox/Notes Work" if value == 'work' else "/home/maugham-chittranshi/Dropbox/Notes Work" if value == 'personal-ubuntu' else "/mnt/c/Users/Ayush/Dropbox/Notes Work"),
             'windows': [
                 {
                     'name': 'wiki',
@@ -213,7 +214,7 @@ if __name__ == '__main__':
         },
         {
             'name': 'ntp',
-            'path': "/mnt/c/Users/Ayush/Notes Personal",
+            'path': ("/home/maugham-chittranshi/Notes Personal" if value == 'personal-ubuntu' else ""),
             'windows': [
                 {
                     'name': 'wiki',
@@ -225,7 +226,7 @@ if __name__ == '__main__':
         },
         {
             'name': 'vimconfig',
-            'path': "/home/ayush-work/.config/nvim" if value == 'work' else "/home/ayush-pc/.config/nvim",
+            'path': ("/home/ayush-work/.config/nvim" if value == 'work' else  "/home/maugham-chittranshi/.config/nvim" if value == 'personal-ubuntu' else "/home/ayush-pc/.config/nvim"),
             'windows': [
                 {
                     'name': 'nvim',
