@@ -16,6 +16,8 @@ sleep 2;
 # /home/maugham-chittranshi/.config/nvim/scripts/sh-launcher/uu.sh;
 # sleep 2;
 /home/maugham-chittranshi/.config/nvim/scripts/sh-launcher/jn.sh;
+/home/maugham-chittranshi/.config/nvim/scripts/sh-launcher/jp.sh;
+/home/maugham-chittranshi/.config/nvim/scripts/sh-launcher/jss.sh;
 /home/maugham-chittranshi/.config/nvim/scripts/sh-launcher/j5.sh;
 sleep 2;
 wmctrl -s 1;
