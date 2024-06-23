@@ -12,8 +12,8 @@ EnvGet, PCTypeValue, pc_type
 if (PCTypeValue = "work")
 {
 ;RESEARCH WORKSTATION
-   Run, cmd.exe /C start chrome "http://127.0.0.1:3000/" --start-maximized --new-window --window-name="jv" 
+   Run, cmd.exe /C start msedge "http://127.0.0.1:3000/" --start-maximized --new-window --window-name="jv" 
 }
 else{
-   Run, cmd.exe /C start chrome "http://127.0.0.1:3000/" --start-maximized --new-window --window-name="jv" 
+   Run, cmd.exe /C start msedge "http://127.0.0.1:3000/" --start-maximized --new-window --window-name="jv" 
 }

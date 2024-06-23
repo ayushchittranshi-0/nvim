@@ -8,7 +8,7 @@ EnvGet, PCTypeValue, pc_type
 if (PCTypeValue = "work")
 {
    ;WORKPLACE WORKSTATION
-   Run, cmd.exe /C start chrome "https://app.slack.com/client/T0385EW6U2D/C05DXUYDSNS" --start-maximized --new-window --window-name="js"
+   Run, cmd.exe /C start msedge "https://app.slack.com/client/T0385EW6U2D/C05DXUYDSNS" --start-maximized --new-window --window-name="js"
 }
 else
 {

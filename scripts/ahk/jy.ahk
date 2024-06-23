@@ -12,4 +12,4 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 EnvGet, PCTypeValue, pc_type
 
 
-Run, cmd.exe /C start chrome "youtube.com" --start-maximized --new-window --window-name="jy" 
+Run, cmd.exe /C start msedge "youtube.com" --start-maximized --new-window --window-name="jy" 
