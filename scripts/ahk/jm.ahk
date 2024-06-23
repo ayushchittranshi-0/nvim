@@ -10,10 +10,10 @@ EnvGet, PCTypeValue, pc_type
 if (PCTypeValue = "work")
 {
    ;WORKPLACE WORKSTATION
-   Run, cmd.exe /C start chrome "gmail.com" --start-maximized --new-window --window-name="jm"
+   Run, cmd.exe /C start msedge "loom.com" "hr.peerxp.com" "gmail.com" --start-maximized --new-window --window-name="jm"
 }
 else
 {
    ;HOME WORKSTATION
-   Run, cmd.exe /C start chrome "gmail.com" "outlook.com" --start-maximized --new-window --window-name="jm"
+   Run, cmd.exe /C start msedge "gmail.com" "outlook.com" --start-maximized --new-window --window-name="jm"
 }

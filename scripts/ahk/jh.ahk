@@ -8,7 +8,7 @@ EnvGet, PCTypeValue, pc_type
 if (PCTypeValue = "work")
 {
    ;WORKPLACE WORKSTATION
-   Run, cmd.exe /C start chrome "hr.peerxp.com" --start-maximized --new-window --window-name="jh"
+   Run, cmd.exe /C start msedge "hr.peerxp.com" --start-maximized --new-window --window-name="jh"
 }
 else
 {

@@ -8,7 +8,7 @@ EnvGet, PCTypeValue, pc_type
 if (PCTypeValue = "work")
 {
    ;WORKPLACE WORKSTATION
-   Run, cmd.exe /C start chrome "https://www.loom.com/looms/videos" --start-maximized --new-window --window-name="jl"
+   Run, cmd.exe /C start msedge "https://www.loom.com/looms/videos" --start-maximized --new-window --window-name="jl"
 }
 else
 {
