@@ -202,7 +202,7 @@ if __name__ == '__main__':
         {
             'name': 'ntw',
             # 'path': "/mnt/c/Users/ayush.chittranshi_pe/Dropbox/Notes Work" if value == 'work' else "/mnt/c/Users/Ayush/Dropbox/Notes Work",
-            'path': ("/mnt/c/Users/ayush.chittranshi_pe/Dropbox/Notes Work" if value == 'work' else "/home/maugham-chittranshi/Dropbox/Notes Work" if value == 'personal-ubuntu' else "/mnt/c/Users/Ayush/Dropbox/Notes Work"),
+            'path': ("/mnt/c/Users/ayush.chittranshi_pe/Dropbox/DropsyncFiles/Notes Work" if value == 'work' else "/home/maugham-chittranshi/Dropbox/DropsyncFiles/Notes Work" if value == 'personal-ubuntu' else "/mnt/c/Users/Ayush/Dropbox/DropsyncFiles/Notes Work"),
             'windows': [
                 {
                     'name': 'wiki',
