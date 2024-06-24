@@ -2,6 +2,7 @@
 #!/bin/bash
 
 # ALIASES IN BASHRC
+# alias nvim="~/nvim.appimage"
 # export pc_type="personal"
 # alias ntw="python3 ~/.config/nvim/scripts/tmux-py.py ntw"
 # alias ntp="python3 ~/.config/nvim/scripts/tmux-py.py ntp"
