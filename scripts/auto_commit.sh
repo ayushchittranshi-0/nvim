@@ -22,6 +22,7 @@ run_commands() {
     # Example:
     git pull
     git add .
+    read -p "Enter commit message (press Enter to use default): " custom_message
     current_date_time=$(date +"%Y-%m-%d %I:%M %p")
     system_name=$(hostname)
     git commit -m "Auto commit on $current_date_time from $system_name"
