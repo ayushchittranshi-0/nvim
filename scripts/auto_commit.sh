@@ -25,7 +25,9 @@ run_commands() {
     read -p "Enter commit message (press Enter to use default): " custom_message
     current_date_time=$(date +"%Y-%m-%d %I:%M %p")
     system_name=$(hostname)
-    git commit -m "Auto commit on $current_date_time from $system_name"
+    commit_message=${custom_message:-"Auto commit on $current_date_time from $system_name"}
+    echo -e "\e[1;33mCommitting with message:\e[0m $commit_message"
+    git commit -m "$commit_message"
     git push
 }
 
@@ -38,7 +40,7 @@ for dir in "${directories[@]}"; do
         expanded_dir="$dir"
     fi
 
-    echo "Checking directory: $expanded_dir"
+    echo -e "\e[1;34mChecking directory:\e[0m $expanded_dir"
     cd "$expanded_dir" || { echo "Failed to change directory to $expanded_dir"; continue; }
 
     # Run git status
