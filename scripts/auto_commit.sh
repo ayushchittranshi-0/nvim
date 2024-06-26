@@ -2,11 +2,19 @@
 
 # Array of directories
 directories=(
-    "~/Desktop"
     "~/.config/nvim"
     # Add more directories as needed
 )
 
+# Function to copy text to clipboard using xclip
+copy_to_clipboard() {
+    local text="$1"
+    if command -v xclip &> /dev/null; then
+        echo "$text" | xclip -selection clipboard
+    else
+        echo "Error: xclip is not installed. Please install xclip to use this feature."
+    fi
+}
 # Function to run commands if user inputs "yes"
 run_commands() {
     echo "Running commands..."
@@ -41,7 +49,7 @@ for dir in "${directories[@]}"; do
         run_commands
     else
         # Ask for further action if user inputs "no"
-        read -p "Do you want to continue to the next directory (c), exit to this directory (e), or just exit (x)? (c/e/x): " action_input
+        read -p "Do you want to continue to the next directory (c), copy path to clipboard (e), or just exit (x)? (c/e/x, press Enter to continue): " action_input
         action_input=${action_input:-c}  # Default to "c" if input is empty
         case "$action_input" in
             c|C)
@@ -49,8 +57,8 @@ for dir in "${directories[@]}"; do
                 continue
                 ;;
             e|E)
-                echo "Exiting to directory: $expanded_dir"
-                exit
+                echo "Copying directory path to clipboard: $expanded_dir"
+                copy_to_clipboard "$expanded_dir"
                 ;;
             x|X)
                 echo "Exiting script..."
