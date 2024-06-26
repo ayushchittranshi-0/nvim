@@ -226,7 +226,7 @@ if __name__ == '__main__':
         },
         {
             'name': 'vimconfig',
-            'path': ("/home/ayush-work/.config/nvim" if value == 'work' else  "/home/maughamc/.config/nvim" if value == 'personal-ubuntu' else  "",
+            'path': ("/home/ayush-work/.config/nvim" if value == 'work' else  "/home/maughamc/.config/nvim" if value == 'personal-ubuntu' else  ""),
             'windows': [
                 {
                     'name': 'nvim',
