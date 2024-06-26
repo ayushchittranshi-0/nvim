@@ -12,6 +12,7 @@
 # alias vimconfig='python3 ~/.config/nvim/scripts/tmux-py.py vimconfig'
 # alias pull_config="chmod u+x ~/.config/nvim/scripts/custom_git_pull1.sh ; ~/.config/nvim/scripts/custom_git_pull1.sh"
 # alias ljj="/home/maughamc/.config/nvim/scripts/sh-launcher/automate-startup.sh"
+# alias autocommit="/home/maughamc/.config/nvim/scripts/auto_commit.sh"
 # export PATH="$HOME/bin:$PATH"
 # eval "$(oh-my-posh init bash)"
 # eval "$(oh-my-posh init bash --config ~/.config/nvim/scripts/maugham.omp.json)"

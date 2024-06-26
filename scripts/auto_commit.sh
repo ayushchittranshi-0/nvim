@@ -23,7 +23,8 @@ run_commands() {
     git pull
     git add .
     current_date_time=$(date +"%Y-%m-%d %I:%M %p")
-    git commit -m "Auto commit on $current_date_time"
+    system_name=$(hostname)
+    git commit -m "Auto commit on $current_date_time from $system_name"
     git push
 }
 
