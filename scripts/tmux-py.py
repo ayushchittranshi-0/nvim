@@ -214,7 +214,7 @@ if __name__ == '__main__':
         },
         {
             'name': 'ntp',
-            'path': ("/home/maugham-chittranshi/Notes Personal" if value == 'personal-ubuntu' else "/home/maughamc/Notes Personal Shared with Ubuntu" if value == 'personal-kubuntu-ideapad' else ""),
+            'path': ("/home/maughamc/Notes Personal" if value == 'personal-ubuntu' else ""),
             'windows': [
                 {
                     'name': 'wiki',
