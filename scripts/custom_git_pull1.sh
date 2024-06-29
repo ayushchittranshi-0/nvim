@@ -13,6 +13,7 @@
 # alias pull_config="chmod u+x ~/.config/nvim/scripts/custom_git_pull1.sh ; ~/.config/nvim/scripts/custom_git_pull1.sh"
 # alias ljj="/home/maughamc/.config/nvim/scripts/sh-launcher/automate-startup.sh"
 # alias autocommit="/home/maughamc/.config/nvim/scripts/auto_commit.sh"
+# alias writer_nvim="XDG_CONFIG_HOME=~/Writer/.config/ XDG_DATA_HOME=~/Writer/.local/ XDG_CACHE_HOME=~/Writer/.cache/ nvim"
 # export PATH="$HOME/bin:$PATH"
 # eval "$(oh-my-posh init bash)"
 # eval "$(oh-my-posh init bash --config ~/.config/nvim/scripts/maugham.omp.json)"

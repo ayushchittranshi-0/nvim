@@ -219,7 +219,7 @@ if __name__ == '__main__':
                 {
                     'name': 'wiki',
                     'commands': [
-                        'nvim index.md',
+                        ('XDG_CONFIG_HOME=~/Writer/.config/ XDG_DATA_HOME=~/Writer/.local/ XDG_CACHE_HOME=~/Writer/.cache/ nvim index.md' if value == 'personal-ubuntu' else "nvim index.md"),
                     ]
                 },
             ]
