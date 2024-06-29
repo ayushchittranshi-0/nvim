@@ -1,2 +1,2 @@
-microsoft-edge --ozone-platform=wayland
+google-chrome --ozone-platform=wayland
 
