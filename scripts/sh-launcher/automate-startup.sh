@@ -18,6 +18,7 @@ sleep 2;
 /home/maughamc/.config/nvim/scripts/sh-launcher/jn.sh;
 /home/maughamc/.config/nvim/scripts/sh-launcher/jp.sh;
 /home/maughamc/.config/nvim/scripts/sh-launcher/jr.sh;
+/home/maughamc/.config/nvim/scripts/sh-launcher/curr.sh;
 # /home/maughamc/.config/nvim/scripts/sh-launcher/jss.sh;
 # /home/maughamc/.config/nvim/scripts/sh-launcher/j5.sh;
 sleep 2;
