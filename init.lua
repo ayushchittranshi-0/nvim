@@ -2,6 +2,19 @@
 -- Check if the MY_VARIABLE environment variable is set to a specific value
 if vim.fn.getenv("pc_type") == "personal-ubuntu" then
     -- Apply specific configurations
+    vim.o.clipboard = "unnamed"
+
+    vim.g.clipboard = {
+        copy = {
+            ['+'] = { 'wl-copy', '--trim-newline' },
+            ['*'] = { 'wl-copy', '--trim-newline' },
+        },
+        paste = {
+            ['+'] = { 'wl-paste', '--no-newline' },
+            ['*'] = { 'wl-paste', '--no-newline' },
+        },
+    }
+
 else
     vim.g.clipboard = {
         name = 'WslClipboard',

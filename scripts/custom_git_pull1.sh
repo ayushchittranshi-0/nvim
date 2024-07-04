@@ -18,6 +18,11 @@
 # eval "$(oh-my-posh init bash)"
 # eval "$(oh-my-posh init bash --config ~/.config/nvim/scripts/maugham.omp.json)"
 
+#SHORTCUTS FOR KRUNNER 
+# bash -c /home/maughamc/.config/nvim/scripts/sh-launcher/kdeBrowserTab.sh
+
+# For switching to desktop 5 and performing search in browser. This is the the search window;
+# qdbus org.kde.KWin /KWin setCurrentDesktop 5; krunner;
 
 
 if [ "$pc_type" == "work" ]; then  
