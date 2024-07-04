@@ -9,10 +9,10 @@ EnvGet, PCTypeValue, pc_type
 if (PCTypeValue = "work")
 {
    ;WORKPLACE WORKSTATION
-   Run, cmd.exe /C start msedge "peerxp.vegaops.com" --start-maximized --new-window --window-name="ui" 
+   Run, cmd.exe /C start chrome "peerxp.vegaops.com" --start-maximized --new-window --window-name="ui" 
 }
 else
 {
    ;HOME WORKSTATION
-   Run, cmd.exe /C start msedge "github.com" --start-maximized --new-window --window-name="ui" 
+   Run, cmd.exe /C start chrome "github.com" --start-maximized --new-window --window-name="ui" 
 }

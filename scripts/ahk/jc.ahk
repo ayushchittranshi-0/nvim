@@ -10,10 +10,10 @@ EnvGet, PCTypeValue, pc_type
 if (PCTypeValue = "work")
 {
    ;WORKPLACE WORKSTATION
-   Run, cmd.exe /C start msedge "chatgpt.peerxp.com" --start-maximized --new-window --window-name="jc" 
+   Run, cmd.exe /C start chrome "chatgpt.peerxp.com" --start-maximized --new-window --window-name="jc" 
 }
 else
 {
    ;HOME WORKSTATION
-   Run, cmd.exe /C start msedge "chat.openai.com" --start-maximized --new-window --window-name="jc" 
+   Run, cmd.exe /C start chrome "chat.openai.com" --start-maximized --new-window --window-name="jc" 
 }

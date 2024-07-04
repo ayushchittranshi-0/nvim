@@ -9,10 +9,10 @@ EnvGet, PCTypeValue, pc_type
 if (PCTypeValue = "work")
 {
    ;WORKPLACE WORKSTATION
-   Run, cmd.exe /C start msedge "dev.to" "medium.com" --start-maximized --new-window --window-name="j1" 
+   Run, cmd.exe /C start chrome "dev.to" "medium.com" --start-maximized --new-window --window-name="j1" 
 }
 else
 {
    ;HOME WORKSTATION
-   Run, cmd.exe /C start msedge "dev.to" "medium.com" --start-maximized --new-window --window-name="j1" 
+   Run, cmd.exe /C start chrome "dev.to" "medium.com" --start-maximized --new-window --window-name="j1" 
 }

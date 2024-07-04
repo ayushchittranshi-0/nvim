@@ -9,7 +9,7 @@ EnvGet, PCTypeValue, pc_type
 if (PCTypeValue = "work")
 {
    ;WORKPLACE WORKSTATION
-   Run, cmd.exe /C start msedge "https://www.notion.so/peerxp/d8a21dc4d75a4eb4ac3991fac56d8dc8?v=dbb336bf51ec4e80b2277f34efcbbfc4" --start-maximized --new-window --window-name="jo"
+   Run, cmd.exe /C start chrome "https://www.notion.so/peerxp/d8a21dc4d75a4eb4ac3991fac56d8dc8?v=dbb336bf51ec4e80b2277f34efcbbfc4" --start-maximized --new-window --window-name="jo"
 }
 else
 {

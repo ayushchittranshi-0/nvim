@@ -8,7 +8,7 @@ EnvGet, PCTypeValue, pc_type
 if (PCTypeValue = "work")
 {
    ;WORKPLACE WORKSTATION
-   Run, cmd.exe /C start msedge "https://app.clickup.com/37498381/inbox?tab=important" --start-maximized --new-window --window-name="ju"
+   Run, cmd.exe /C start chrome "https://app.clickup.com/37498381/inbox?tab=important" --start-maximized --new-window --window-name="ju"
 }
 else
 {
