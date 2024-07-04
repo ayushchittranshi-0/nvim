@@ -3,6 +3,7 @@
 # Array of directories
 directories=(
     "~/.config/nvim"
+    "~/Writer"
     # Add more directories as needed
 )
 
