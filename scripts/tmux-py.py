@@ -234,6 +234,28 @@ if __name__ == '__main__':
                         'nvim',
                     ]
                 },
+                {
+                    'name': 'git',
+                    'commands': [
+                    ]
+                },
+            ]
+        },
+        {
+            'name': 'vimwriterconfig',
+            'path': ("" if value == 'work' else  "/home/maughamc/Writer/.config/nvim" if value == 'personal-ubuntu' else  ""),
+            'windows': [
+                {
+                    'name': 'nvim',
+                    'commands': [
+                        'nvim',
+                    ]
+                },
+                {
+                    'name': 'git',
+                    'commands': [
+                    ]
+                },
             ]
         },
         {
