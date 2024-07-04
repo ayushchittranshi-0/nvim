@@ -25,6 +25,9 @@
 # For switching to desktop 5 and performing search in browser. This is the the search window;
 # qdbus org.kde.KWin /KWin setCurrentDesktop 5; krunner;
 
+# WAYLAND COPY
+# sudo apt install wl-clipboard
+
 
 if [ "$pc_type" == "work" ]; then  
     cd ~/.config/nvim
