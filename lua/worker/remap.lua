@@ -66,3 +66,5 @@ vim.keymap.set("x", "<leader>r", [["_dP]])
 vim.api.nvim_set_keymap('n', '<Leader>cf', ':e %:h/', { noremap = true })
 vim.api.nvim_set_keymap('n', '<Leader>cd', ':!mkdir %:h/', { noremap = true })
 
+-- Copy current file path
+vim.api.nvim_create_user_command("CopyRelPath", "call setreg('+', expand('%'))", {})

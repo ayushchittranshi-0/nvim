@@ -6,8 +6,10 @@ if vim.fn.getenv("pc_type") == "personal-ubuntu" then
 
     vim.g.clipboard = {
         copy = {
-            ['+'] = { 'wl-copy', '--trim-newline' },
-            ['*'] = { 'wl-copy', '--trim-newline' },
+            -- ['+'] = { 'wl-copy', '--trim-newline' },
+            ['+'] = { 'wl-copy', },
+            ['*'] = { 'wl-copy', },
+            -- ['*'] = { 'wl-copy', '--trim-newline' },
         },
         paste = {
             ['+'] = { 'wl-paste', '--no-newline' },
