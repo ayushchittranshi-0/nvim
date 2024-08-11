@@ -7,6 +7,12 @@ directories=(
     # Add more directories as needed
 )
 
+# Array of shutdown directories
+shutdown_directories=(
+    "/home/maughamc/Developer/learn-topics"
+    # Add more shutdown directories as needed
+)
+
 # Function to copy text to clipboard using xclip
 copy_to_clipboard() {
     local text="$1"
@@ -31,10 +37,28 @@ run_commands() {
     git commit -m "$commit_message"
     git push
 }
+# Function to get non-hidden directories 1 level deep
+get_children_directories() {
+    local parent_dir="$1"
+    find "$parent_dir" -maxdepth 1 -mindepth 1 -type d ! -name ".*"
+}
 
-# Check if the script was run with the "." parameter
+# Check if the script was run with the "." or "sd" parameter
 if [[ "$1" == "." ]]; then
     directories=(".")
+elif [[ "$1" == "sd" ]]; then
+    directories=()
+    for shutdown_dir in "${shutdown_directories[@]}"; do
+        # Expand the ~ to the full home directory path
+        if [[ $shutdown_dir == ~* ]]; then
+            expanded_shutdown_dir="${shutdown_dir/#\~/$HOME}"
+        else
+            expanded_shutdown_dir="$shutdown_dir"
+        fi
+        # Get children directories and add them to directories array
+        mapfile -t children_dirs < <(get_children_directories "$expanded_shutdown_dir")
+        directories+=("${children_dirs[@]}")
+    done
 fi
 
 # Loop through each directory
@@ -68,7 +92,8 @@ for dir in "${directories[@]}"; do
                 ;;
             e|E)
                 echo "Copying directory path to clipboard: $expanded_dir"
-                copy_to_clipboard "$expanded_dir"
+                wl-copy "$expanded_dir"
+                exit
                 ;;
             x|X)
                 echo "Exiting script..."
