@@ -73,8 +73,29 @@ for dir in "${directories[@]}"; do
     echo -e "\e[1;34mChecking directory:\e[0m $expanded_dir"
     cd "$expanded_dir" || { echo "Failed to change directory to $expanded_dir"; continue; }
 
-    # Run git status
-    git status
+    # Run git status and capture the output
+    git_status_output=$(git status 2>&1)
+
+    # Check if the directory is not a git repository
+    if echo "$git_status_output" | grep -q "not a git repository"; then
+        echo -e "\e[1;31m$dir is not a git repository.\e[0m"
+        read -p "Do you want to exit the script? (y/n): " exit_input
+        if [[ "$exit_input" == "y" ]]; then
+            echo "Copying directory path to clipboard and exiting..."
+            wl-copy "$dir"
+            exit
+        else
+            echo "Continuing to the next directory..."
+            continue
+        fi
+    fi
+
+    # Check if the branch is up to date and there are no changes
+    if echo "$git_status_output" | grep -q "Your branch is up to date" && ! echo "$git_status_output" | grep -q "Changes not staged for commit"; then
+        echo -e "\e[1;32mSkipping directory:\e[0m $dir (branch is up to date and no unstaged changes)"
+        continue
+    fi
+    echo "$git_status_output"
     
     # Ask for user input
     read -p "Do you want to run the commands for this directory? (y/n): " user_input
