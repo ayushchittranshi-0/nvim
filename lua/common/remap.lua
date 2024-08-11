@@ -67,7 +67,7 @@ end
 vim.api.nvim_set_keymap('n', '<Leader>-', '<Plug>VimwikiRemoveHeaderLevel',{})
 -- //vimwiki md format
 vim.g.vimwiki_list = {{
-    path = '~/vimwiki/',
+    path = '~/Notes Work/',
     syntax = 'markdown',
     ext = '.md'
 },{
