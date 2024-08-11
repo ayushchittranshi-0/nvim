@@ -32,6 +32,11 @@ run_commands() {
     git push
 }
 
+# Check if the script was run with the "." parameter
+if [[ "$1" == "." ]]; then
+    directories=(".")
+fi
+
 # Loop through each directory
 for dir in "${directories[@]}"; do
     # Expand the ~ to the full home directory path
