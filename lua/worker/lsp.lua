@@ -1,3 +1,4 @@
+vim.opt.signcolumn = "yes"
 local lsp_zero = require('lsp-zero')
 
 vim.keymap.set('n', '<Leader>dd', vim.diagnostic.open_float)
@@ -24,6 +25,7 @@ require'lspconfig'.tsserver.setup{}
 require'lspconfig'.cssls.setup{}
 require'lspconfig'.cssmodules_ls.setup{}
 require'lspconfig'.somesass_ls.setup{}
+require'lspconfig'.jdtls.setup{}
 require'lspconfig'.emmet_language_server.setup({
   filetypes = { "css","ejs", "eruby", "html", "javascript", "javascriptreact", "less", "sass", "scss", "pug", "typescriptreact" },
   -- Read more about this options in the [vscode docs](https://code.visualstudio.com/docs/editor/emmet#_emmet-configuration).

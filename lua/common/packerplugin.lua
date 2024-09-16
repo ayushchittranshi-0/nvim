@@ -55,6 +55,13 @@ return require('packer').startup(function(use)
         }
     }
 
+    -- AI maven plugin
+    use {
+        "supermaven-inc/supermaven-nvim",
+        config = function()
+            require("supermaven-nvim").setup({})
+        end,
+    }
     --  smooth scroll plugin
     use 'psliwka/vim-smoothie'
 
@@ -114,6 +121,9 @@ return require('packer').startup(function(use)
     use {'reedes/vim-litecorrect'} -- Better autocorrections
     use {'reedes/vim-textobj-sentence'} -- Treat sentences as text objects
     use {'reedes/vim-wordy'} -- Weasel words and passive voice
+    use {
+    "williamboman/mason.nvim"
+    }
 
 end)
 

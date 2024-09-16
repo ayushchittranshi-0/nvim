@@ -1,3 +1,4 @@
+require("worker.mason")
 require("worker.lsp")
 require("worker.remap")
 require("worker.plugins.fugitive")
