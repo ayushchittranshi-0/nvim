@@ -13,8 +13,6 @@ vim.filetype.add({ extension = { ejs = "ejs" } })
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
-    -- Packer can manage itself
-
     use 'wbthomason/packer.nvim'
 
     use {
@@ -33,10 +31,6 @@ return require('packer').startup(function(use)
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v3.x',
         requires = {
-            --- Uncomment these if you want to manage LSP servers from neovim
-            -- {'williamboman/mason.nvim'},
-            -- {'williamboman/mason-lspconfig.nvim'},
-
             -- LSP Support
             {'neovim/nvim-lspconfig'},
             -- Autocompletion
@@ -54,26 +48,18 @@ return require('packer').startup(function(use)
             {'rafamadriz/friendly-snippets'},
         }
     }
+    use {"williamboman/mason.nvim"}
 
-    -- AI maven plugin
-    use {
-        "supermaven-inc/supermaven-nvim",
-        config = function()
-            require("supermaven-nvim").setup({})
-        end,
-    }
-    --  smooth scroll plugin
+    -- for smooth scrolling
     use 'psliwka/vim-smoothie'
 
+    -- for lorem epsum
     use "derektata/lorem.nvim"
 
     -- for pairing
     use 'cohama/lexima.vim'
-    -- for indentation jsx and tsx
-    --   use 'maxmellon/vim-jsx-pretty'
 
-    --highlinting and syntax color
-    -- can use jsx pretty also
+    -- tree sitter for linting highlights
     use {
         'nvim-treesitter/nvim-treesitter',
         run = function()
@@ -82,37 +68,39 @@ return require('packer').startup(function(use)
         end,} 
     -- use("nvim-treesitter/nvim-treesitter-context")
 
-    --Others
+    --Others useful plugins not explored
     use("mbbill/undotree")
     use("tpope/vim-fugitive")
     use("tpope/vim-vinegar")
     use 'junegunn/vim-peekaboo'
+    -- use "theprimeagen/harpoon"
 
--- somewhere in your config:
-    -- Using Packer
+    -- themes
     use 'navarasu/onedark.nvim'
     use 'morhetz/gruvbox'
+    use 'vim-airline/vim-airline'
+    use 'vim-airline/vim-airline-themes'
+
+    -- for prettier setup
     use({
         "stevearc/conform.nvim",
         config = function()
             require("conform").setup()
         end,
     })
+
+    -- for surround syntax 
     use 'tpope/vim-surround'
+
+    -- for commenting/uncommenting
     use 'tpope/vim-commentary'
     use 'JoosepAlviste/nvim-ts-context-commentstring'
-    -- use "theprimeagen/harpoon"
+
+    -- for notes
     use 'vimwiki/vimwiki'
-    use 'vim-airline/vim-airline'
-    use 'vim-airline/vim-airline-themes'
-    use("folke/zen-mode.nvim")
-    -- use 'preservim/nerdtree'
-    -- use 'Xuyuanp/nerdtree-git-plugin'
-
-
-
 
     --WRITING plugins
+    use("folke/zen-mode.nvim")
     use {'reedes/vim-pencil'} -- Super-powered writing things
     use {'tpope/vim-abolish'} -- Fancy abbreviation replacements
     use {'junegunn/limelight.vim'} -- Highlights only active paragraph
@@ -121,46 +109,6 @@ return require('packer').startup(function(use)
     use {'reedes/vim-litecorrect'} -- Better autocorrections
     use {'reedes/vim-textobj-sentence'} -- Treat sentences as text objects
     use {'reedes/vim-wordy'} -- Weasel words and passive voice
-    use {
-    "williamboman/mason.nvim"
-    }
 
 end)
 
-
-
---   old configs
--- use {
--- 'VonHeikemen/lsp-zero.nvim',
--- branch = 'v3.x',
--- requires = {
--- --- Uncomment these if you want to manage LSP servers from neovim
--- -- {'williamboman/mason.nvim'},
--- -- {'williamboman/mason-lspconfig.nvim'},
-
--- -- LSP Support
--- {'neovim/nvim-lspconfig'},
--- -- Autocompletion
--- {'hrsh7th/nvim-cmp'},
--- {'hrsh7th/cmp-nvim-lsp'},
--- {'L3MON4D3/LuaSnip'},
--- {
--- 'hrsh7th/nvim-cmp',
--- config = function ()
--- require'cmp'.setup {
--- snippet = {
--- expand = function(args)
--- require'luasnip'.lsp_expand(args.body)
--- end
--- },
-
--- sources = {
--- { name = 'luasnip' },
--- -- more sources
--- },
--- }
--- end
--- },
--- { 'saadparwaiz1/cmp_luasnip' } 
--- }
--- }
