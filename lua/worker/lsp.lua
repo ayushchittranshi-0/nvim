@@ -19,6 +19,7 @@ lsp_zero.on_attach(function(client, bufnr)
     vim.keymap.set('n', '<C-h>', vim.lsp.buf.signature_help, opts)
 end)
 require'lspconfig'.eslint.setup{}
+require'lspconfig'.ts_ls.setup{}
 require'lspconfig'.html.setup{}
 require'lspconfig'.tailwindcss.setup{}
 require'lspconfig'.ts_ls.setup{}
