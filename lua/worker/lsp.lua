@@ -27,6 +27,7 @@ require'lspconfig'.cssls.setup{}
 require'lspconfig'.cssmodules_ls.setup{}
 require'lspconfig'.somesass_ls.setup{}
 require'lspconfig'.jdtls.setup{}
+require'lspconfig'.emmet_ls.setup{}
 require'lspconfig'.emmet_language_server.setup({
   filetypes = { "css","ejs", "eruby", "html", "javascript", "javascriptreact", "less", "sass", "scss", "pug", "typescriptreact" },
   -- Read more about this options in the [vscode docs](https://code.visualstudio.com/docs/editor/emmet#_emmet-configuration).

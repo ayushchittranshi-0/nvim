@@ -83,13 +83,13 @@ if __name__ == '__main__':
     # Define your sessions and windows here
     sessions = [
             {
-                'name': 'chaabi',
-                'path': '/home/ayush-work/Developer/chaabi-frontend',
+                'name': 'jexamx',
+                'path': '/Users/ayushchittranshi/Developer/jExamx',
                 'windows': [
                     {
                         'name': 'nvim',
                         'commands': [
-                            'cd /home/ayush-work/Developer/chaabi-frontend/',
+                            'cd /Users/ayushchittranshi/Developer/jExamx',
                             'nvim src',
                         ]
                     },
@@ -101,108 +101,15 @@ if __name__ == '__main__':
                     {
                         'name': 'frontend-server',
                         'commands': [
-                            'cd /home/ayush-work/Developer/chaabi-frontend/',
-                            'BROWSER=none npm start',
+                            'cd /Users/ayushchittranshi/Developer/jExamx',
+                            'npm run dev',
                         ]
                     },
-                    {
-                        'name': 'backend-server',
-                        'commands': [
-                            'cd /home/ayush-work/Developer/backend/chaabi-backend/',
-                            'git pull',
-                            'sudo -S <<< " " service docker start',
-                            'sleep 10s',
-                            'docker kill $(docker ps -q)',
-                            'sudo -S <<< " " docker compose  --env-file .docker.env up',
-                        ]
-                    }
-                ]
-            },
-            {
-                'name': 'ff',
-                'windows': [
-                    {
-                        'name': 'backend-server',
-                        'commands': [
-                            'cd /home/ayush-work/Developer/ff/backend',
-                            'git pull',
-                            'docker kill $(docker ps -q)',
-                            'sudo -S <<< " " docker-compose  --env-file .docker.env up',
-                        ]
-                    },
-                    {
-                        'name': 'frontend-server',
-                        'commands': [
-                            'cd /home/ayush-work/Developer/ff/react',
-                            'npm start',
-                        ]
-                    },
-                    {
-                        'name': 'code',
-                        'commands': [
-                            'cd /home/ayush-work/Developer/ff/react',
-                            'nvim .',
-                        ]
-                    }
-                ]
-            },
-            {
-                'name': 'avl',
-                'windows': [
-                    {
-                        'name': 'backend-server',
-                        'commands': [
-                            'cd /home/ayush-work/Developer/almff/backend',
-                            'git pull',
-                            'docker kill $(docker ps -q)',
-                            'sudo -S <<< " " docker-compose  --env-file .docker.env up',
-                        ]
-                    },
-                    {
-                        'name': 'frontend-server',
-                        'commands': [
-                            'cd /home/ayush-work/Developer/almff/react',
-                            'npm start',
-                        ]
-                    },
-                    {
-                        'name': 'code',
-                        'commands': [
-                            'cd /home/ayush-work/Developer/almff/react',
-                            'nvim .',
-                        ]
-                    }
-                ]
-            },
-            {
-                'name': 'rcl',
-                'path': '/home/ayush-work/Developer/react-component-library',
-                'windows': [
-                    {
-                        'name': 'nvim',
-                        'commands': [
-                            'cd /home/ayush-work/Developer/react-component-library',
-                            'nvim src',
-                        ]
-                    },
-                    {
-                        'name': 'git',
-                        'commands': [
-                        ]
-                    },
-                    {
-                        'name': 'storybook-server',
-                        'commands': [
-                            'cd /home/ayush-work/Developer/react-component-library',
-                            'npm run storybook',
-                        ]
-                    }
                 ]
             },
         {
             'name': 'ntw',
-            # 'path': "/mnt/c/Users/ayush.chittranshi_pe/Dropbox/Notes Work" if value == 'work' else "/mnt/c/Users/Ayush/Dropbox/Notes Work",
-            'path': ("/mnt/c/Users/ayush.chittranshi_pe/Dropbox/DropsyncFiles/Notes Work" if value == 'work' else "/home/maughamc/Notes Work" if value == 'personal-ubuntu' else ""),
+            'path': ("/Users/ayushchittranshi/Dropbox/DropsyncFiles/Notes Work" if value == 'work' else "/home/maughamc/Notes Work" if value == 'personal-ubuntu' else ""),
             'windows': [
                 {
                     'name': 'wiki',
@@ -226,7 +133,7 @@ if __name__ == '__main__':
         },
         {
             'name': 'vimconfig',
-            'path': ("/home/ayush-work/.config/nvim" if value == 'work' else  "/home/maughamc/.config/nvim" if value == 'personal-ubuntu' else  ""),
+            'path': ("/Users/ayushchittranshi/.config/nvim" if value == 'work' else  "/home/maughamc/.config/nvim" if value == 'personal-ubuntu' else  ""),
             'windows': [
                 {
                     'name': 'nvim',
@@ -275,11 +182,6 @@ if __name__ == '__main__':
                 },
                 {
                     'name': 'frontend-server',
-                    'commands': [
-                    ]
-                },
-                {
-                    'name': 'backend-server',
                     'commands': [
                     ]
                 },

@@ -71,6 +71,7 @@ return require('packer').startup(function(use)
     --Others useful plugins not explored
     use("mbbill/undotree")
     use("tpope/vim-fugitive")
+    use("tpope/vim-repeat")
     use("tpope/vim-vinegar")
     use 'junegunn/vim-peekaboo'
     -- use "theprimeagen/harpoon"
