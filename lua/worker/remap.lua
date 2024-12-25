@@ -66,17 +66,3 @@ vim.keymap.set("x", "<leader>r", [["_dP]])
 vim.api.nvim_set_keymap('n', '<Leader>cf', ':e %:h/', { noremap = true })
 vim.api.nvim_set_keymap('n', '<Leader>cd', ':!mkdir %:h/', { noremap = true })
 
--- Copy current file path
--- Function to copy relative file path with a leading slash to clipboard
-local function copy_relative_file_path_with_slash()
-  local relative_path = '/' .. vim.fn.expand('%')
-  vim.fn.setreg('+', relative_path)
-  print("Copied: " .. relative_path)
-end
-
--- Create a user command that calls the function
-vim.api.nvim_create_user_command("CopyRelPath", function()
-  copy_relative_file_path_with_slash()
-end, {})
-vim.api.nvim_set_keymap('n', '<leader>yf', ':CopyRelPath<CR>', { noremap = true, silent = true })
-

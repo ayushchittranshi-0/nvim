@@ -43,3 +43,4 @@ else
     require("worker")
 end
 
+require("relativePathsCopyPaste")
