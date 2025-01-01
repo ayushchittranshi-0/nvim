@@ -1,18 +1,17 @@
+
 #!/bin/bash
+source ~/.zshrc
 
 open -na "Google Chrome" --args --new-window "google.com"
 sleep 2
 osascript -e 'tell application "System Events" to keystroke "j" using option down'
 sleep 1
 
-osascript <<EOF
-tell application "iTerm2"
-     create window with default profile
-     tell current session of current window
-          write text "echo -ne '\\\e]1;jj\\\a'"
-      end tell
-end tell
-EOF
+# Fixed iTerm opening - removed the incorrect heredoc and simplified
+osascript -e '
+    tell application "iTerm"
+        create window with default profile
+    end tell'
 sleep 2
 osascript -e 'tell application "System Events" to keystroke "j" using option down'
 sleep 1
@@ -26,7 +25,6 @@ open -na "Google Chrome" --args --new-window "https://github.com"
 sleep 2
 osascript -e 'tell application "System Events" to keystroke "j" using option down'
 sleep 1
-
 
 open -na "Google Chrome" --args --new-window "app.slack.com/client"
 sleep 2
@@ -46,14 +44,17 @@ sleep 2
 osascript -e 'tell application "System Events" to keystroke "j" using option down'
 sleep 1
 
-osascript <<EOF
-tell application "iTerm2"
-     create window with default profile
-     tell current session of current window
-          write text "echo -ne '\\\e]1;jn\\\a'"
-      end tell
-end tell
-EOF
+# Fixed iTerm command with proper AppleScript syntax
+osascript -e '
+tell application "iTerm"
+    activate
+    tell current window
+        create tab with default profile
+        tell current session
+            write text "echo -ne \"\033]1;jn\007\""
+        end tell
+    end tell
+end tell'
 sleep 2
 osascript -e 'tell application "System Events" to keystroke "j" using option down'
 sleep 1

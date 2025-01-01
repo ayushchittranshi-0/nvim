@@ -132,6 +132,23 @@ if __name__ == '__main__':
             ]
         },
         {
+            'name': 'pvimconfig',
+            'path': ("/Users/ayushchittranshi/python-nvim/.config/nvim" if value == 'work' else  "/home/maughamc/python-nvim/.config/nvim" if value == 'personal-ubuntu' else  ""),
+            'windows': [
+                {
+                    'name': 'nvim',
+                    'commands': [
+                        'nvim',
+                    ]
+                },
+                {
+                    'name': 'git',
+                    'commands': [
+                    ]
+                },
+            ]
+        },
+        {
             'name': 'vimconfig',
             'path': ("/Users/ayushchittranshi/.config/nvim" if value == 'work' else  "/home/maughamc/.config/nvim" if value == 'personal-ubuntu' else  ""),
             'windows': [
