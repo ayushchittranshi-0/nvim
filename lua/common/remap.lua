@@ -25,6 +25,7 @@ vim.cmd('set nohlsearch')
 
 -- Useful Keymaps
 vim.keymap.set("i","jj", "<Esc><Right>")
+vim.keymap.set("i","JJ", "<Esc><Right>")
 
 -- Function to open personalVimWiki in a new tab if not already opened in a tab
 function openFileInNewTab(filepath)

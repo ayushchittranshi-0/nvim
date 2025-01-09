@@ -74,7 +74,7 @@ return require('packer').startup(function(use)
     use("tpope/vim-repeat")
     use("tpope/vim-vinegar")
     use 'junegunn/vim-peekaboo'
-    -- use "theprimeagen/harpoon"
+    use "theprimeagen/harpoon"
 
     -- themes
     use 'navarasu/onedark.nvim'
