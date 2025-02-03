@@ -18,7 +18,7 @@ require('harpoon').setup({
 
         -- set marks specific to each git branch inside git repository
         -- Each branch will have it's own set of marked files
-        mark_branch = false,
+        mark_branch = true,
 
         -- enable tabline with harpoon marks
         tabline = false,
@@ -32,12 +32,16 @@ require('telescope').load_extension('harpoon')
 
 
 
+vim.keymap.set('n', '<leader>hn', ':lua require("harpoon.ui").nav_next()<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>hp', ':lua require("harpoon.ui").nav_prev()<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>hh', ':lua require("harpoon.ui").toggle_quick_menu()<CR>', { noremap = true, silent = true })
-vim.keymap.set('n', '<leader>hh', ':lua require("harpoon.mark").add_file()<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>ha', ':lua require("harpoon.mark").add_file()<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>h1', ':lua require("harpoon.ui").nav_file(1)<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>h2', ':lua require("harpoon.ui").nav_file(2)<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>h3', ':lua require("harpoon.ui").nav_file(3)<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>h4', ':lua require("harpoon.ui").nav_file(4)<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>h5', ':lua require("harpoon.ui").nav_file(5)<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>h6', ':lua require("harpoon.ui").nav_file(6)<CR>', { noremap = true, silent = true })
 
 -- vim.keymap.set("n", "<leader>a", mark.add_file)
 -- vim.keymap.set("n", "<C-e>", ui.toggle_quick_menu)
