@@ -29,7 +29,7 @@ vim.api.nvim_set_keymap("n" ,"<C-_>" ,"gcc",{ noremap = false, silent = true })
 vim.api.nvim_set_keymap("v" ,"<C-_>","gc",{ noremap = false, silent = true })
 
 -- Go to last file with backspace
-vim.api.nvim_set_keymap('n', '<BS>', ':b#<CR>', { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('n', '<BS>', ':b#<CR>', { noremap = true, silent = true })
 -- vim.keymap.set("n","<Leader><Space>", "<cmd>call smoothie#do("\<C-D>") <CR>")
 
 -- To center cursor
