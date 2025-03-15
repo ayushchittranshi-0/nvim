@@ -49,6 +49,10 @@ return require('packer').startup(function(use)
         }
     }
     use {"williamboman/mason.nvim"}
+    use {
+        'kkoomen/vim-doge',
+        run = ':call doge#install()'
+    }
 
     -- for smooth scrolling
     use 'psliwka/vim-smoothie'

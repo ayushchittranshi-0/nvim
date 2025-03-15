@@ -19,3 +19,6 @@ alias tnew='python3 ~/.config/nvim/scripts/tmux-py.py -new'
 # configure oh-my-posh
 eval "$(oh-my-posh init zsh)"
 eval "$(oh-my-posh init bash --config ~/.config/nvim/scripts/maugham.omp.json)"
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - zsh)"
