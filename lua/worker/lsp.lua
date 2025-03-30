@@ -19,6 +19,7 @@ lsp_zero.on_attach(function(client, bufnr)
     vim.keymap.set('n', '<C-h>', vim.lsp.buf.signature_help, opts)
 end)
 require'lspconfig'.eslint.setup{}
+require'lspconfig'.pyright.setup{}
 require'lspconfig'.ts_ls.setup{}
 require'lspconfig'.html.setup{}
 require'lspconfig'.tailwindcss.setup{}
@@ -27,6 +28,7 @@ require'lspconfig'.cssls.setup{}
 require'lspconfig'.cssmodules_ls.setup{}
 require'lspconfig'.somesass_ls.setup{}
 require'lspconfig'.jdtls.setup{}
+require'lspconfig'.docker_compose_language_service.setup{}
 require'lspconfig'.emmet_ls.setup{}
 require'lspconfig'.emmet_language_server.setup({
   filetypes = { "css","ejs", "eruby", "html", "javascript", "javascriptreact", "less", "sass", "scss", "pug", "typescriptreact" },
