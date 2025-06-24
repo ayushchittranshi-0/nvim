@@ -1,3 +1,7 @@
+if [-f ~/.secret_env]; then 
+    source ~/.secret_env
+fi
+
 export pc_type="work"
 alias ntw="python3 ~/.config/nvim/scripts/tmux-py.py ntw"
 alias ntp="python3 ~/.config/nvim/scripts/tmux-py.py ntp"
@@ -5,8 +9,6 @@ alias pull_config="chmod u+x ~/.config/nvim/scripts/custom_git_pull1.sh ; ~/.con
 alias pull_config="chmod u+x ~/.config/nvim/scripts/custom_git_pull1.sh ; ~/.config/nvim/scripts/custom_git_pull1.sh"
 alias autocommit="/home/maughamc/.config/nvim/scripts/auto_commit.sh"
 alias pnvim="XDG_CONFIG_HOME=~/python-nvim/.config/ XDG_DATA_HOME=~/python-nvim/.local/ XDG_CACHE_HOME=~/python-nvim/.cache/ nvim"
-
-
 
 # python tmux-py scripts
 alias ljj="~/.config/nvim/scripts/automate-mac.sh"
