@@ -65,17 +65,22 @@ vim.keymap.set("x", "<leader>r", [["_dP]])
 -- Create a key mapping for entering command mode and inserting current file path and then creating file/directory
 vim.api.nvim_set_keymap('n', '<Leader>cf', ':e %:h/', { noremap = true })
 vim.api.nvim_set_keymap('n', '<Leader>cd', ':!mkdir %:h/', { noremap = true })
--- With silent option to avoid command echo
-vim.api.nvim_set_keymap('n', '<Leader>q', ':wa<CR>:e<CR>', { noremap = true, silent = true })
-
--- Using vim.keymap.set (newer Neovim syntax)
-vim.keymap.set('n', '<Leader>q', ':wa<CR>:e<CR>', { noremap = true, silent = true })
 
 -- If you want a description for which-key or similar plugins
-vim.keymap.set('n', '<Leader>q', ':wa<CR>:e<CR>', { 
-  noremap = true, 
-  -- silent = true, 
-  desc = "Save all and reload current file" 
+vim.api.nvim_create_user_command('Sw', function()
+  vim.cmd('wa')
+
+  -- if vim.g.vscode then
+  --   vim.cmd('!cursor %')
+  -- else
+    vim.cmd('!osascript -e "tell application \\"System Events\\" to keystroke \\"n\\" using option down"')
+  -- end
+end, {
+  desc = "Save all and reload current file"
 })
 
-
+vim.api.nvim_create_user_command('Ra', function()
+  vim.cmd('bufdo e')
+end, {
+  desc = "Reload all buffers"
+})

@@ -10,137 +10,139 @@ vim.filetype.add({ extension = { ejs = "ejs" } })
 -- This file can be loaded by calling `lua require('plugins')` from your init.vim
 
 -- Only required if you have packer configured as `opt`
-vim.cmd [[packadd packer.nvim]]
+--
+if vim.g.vscode then
+    vim.cmd [[packadd packer.nvim]]
 
-return require('packer').startup(function(use)
-    use 'wbthomason/packer.nvim'
+    return require('packer').startup(function(use)
+        use 'wbthomason/packer.nvim'
 
-    use {
-        'nvim-telescope/telescope.nvim', tag = '0.1.3',
-        -- or                            , branch = '0.1.x',
-        requires = { 
-            {'nvim-lua/plenary.nvim'} ,
-            { "nvim-telescope/telescope-live-grep-args.nvim" },
-        },
-        config = function()
-            require("telescope").load_extension("live_grep_args")
-        end
-    }
-
-    use {
-        'VonHeikemen/lsp-zero.nvim',
-        branch = 'v3.x',
-        requires = {
-            -- LSP Support
-            {'neovim/nvim-lspconfig'},
-            -- Autocompletion
-            {'hrsh7th/nvim-cmp'},
-            {'hrsh7th/cmp-buffer'},
-            {'hrsh7th/cmp-cmdline'},
-            {'hrsh7th/cmp-path'},
-            {'hrsh7th/cmp-nvim-lsp'},
-            {'hrsh7th/cmp-nvim-lua'},
-            {'L3MON4D3/LuaSnip'},
-            --this is not menmtioned in documentation
-            { 'saadparwaiz1/cmp_luasnip' },
-            -- Snippets
-            {'L3MON4D3/LuaSnip'},
-            {'rafamadriz/friendly-snippets'},
+        use {
+            'nvim-telescope/telescope.nvim', tag = '0.1.3',
+            -- or                            , branch = '0.1.x',
+            requires = { 
+                {'nvim-lua/plenary.nvim'} ,
+                { "nvim-telescope/telescope-live-grep-args.nvim" },
+            },
+            config = function()
+                require("telescope").load_extension("live_grep_args")
+            end
         }
-    }
-    use {"williamboman/mason.nvim"}
-    use {
-        'kkoomen/vim-doge',
-        run = ':call doge#install()'
-    }
 
-    -- for smooth scrolling
-    use 'psliwka/vim-smoothie'
+        use {
+            'VonHeikemen/lsp-zero.nvim',
+            branch = 'v3.x',
+            requires = {
+                -- LSP Support
+                {'neovim/nvim-lspconfig'},
+                -- Autocompletion
+                {'hrsh7th/nvim-cmp'},
+                {'hrsh7th/cmp-buffer'},
+                {'hrsh7th/cmp-cmdline'},
+                {'hrsh7th/cmp-path'},
+                {'hrsh7th/cmp-nvim-lsp'},
+                {'hrsh7th/cmp-nvim-lua'},
+                {'L3MON4D3/LuaSnip'},
+                --this is not menmtioned in documentation
+                { 'saadparwaiz1/cmp_luasnip' },
+                -- Snippets
+                {'L3MON4D3/LuaSnip'},
+                {'rafamadriz/friendly-snippets'},
+            }
+        }
+        use {"williamboman/mason.nvim"}
+        use {
+            'kkoomen/vim-doge',
+            run = ':call doge#install()'
+        }
 
-    -- for lorem epsum
-    use "derektata/lorem.nvim"
+        -- for smooth scrolling
+        use 'psliwka/vim-smoothie'
 
-    -- for pairing
-    use 'cohama/lexima.vim'
+        -- for lorem epsum
+        use "derektata/lorem.nvim"
 
-    -- tree sitter for linting highlights
-    use {
-        'nvim-treesitter/nvim-treesitter',
-        run = function()
-            local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
-            ts_update()
-        end,} 
-    -- use("nvim-treesitter/nvim-treesitter-context")
+        -- for pairing
+        use 'cohama/lexima.vim'
 
-    --Others useful plugins not explored
-    use("mbbill/undotree")
-    use("tpope/vim-fugitive")
-    use("tpope/vim-repeat")
-    use("tpope/vim-vinegar")
-    use 'junegunn/vim-peekaboo'
-    use "theprimeagen/harpoon"
+        -- tree sitter for linting highlights
+        use {
+            'nvim-treesitter/nvim-treesitter',
+            run = function()
+                local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+                ts_update()
+            end,} 
+        -- use("nvim-treesitter/nvim-treesitter-context")
 
-    -- themes
-    use 'navarasu/onedark.nvim'
-    use 'morhetz/gruvbox'
-    use 'vim-airline/vim-airline'
-    use 'vim-airline/vim-airline-themes'
+        --Others useful plugins not explored
+        use("mbbill/undotree")
+        use("tpope/vim-fugitive")
+        use("tpope/vim-repeat")
+        use("tpope/vim-vinegar")
+        use 'junegunn/vim-peekaboo'
+        use "theprimeagen/harpoon"
 
-    -- for prettier setup
-    use({
-        "stevearc/conform.nvim",
-        config = function()
-            require("conform").setup()
-        end,
-    })
+        -- themes
+        use 'navarasu/onedark.nvim'
+        use 'morhetz/gruvbox'
+        use 'vim-airline/vim-airline'
+        use 'vim-airline/vim-airline-themes'
 
-    -- for surround syntax 
-    use 'tpope/vim-surround'
+        -- for prettier setup
+        use({
+            "stevearc/conform.nvim",
+            config = function()
+                require("conform").setup()
+            end,
+        })
 
-    -- for commenting/uncommenting
-    use 'tpope/vim-commentary'
-    use 'JoosepAlviste/nvim-ts-context-commentstring'
+        -- for surround syntax 
+        use 'tpope/vim-surround'
 
-    -- for notes
-    use 'vimwiki/vimwiki'
+        -- for commenting/uncommenting
+        use 'tpope/vim-commentary'
+        use 'JoosepAlviste/nvim-ts-context-commentstring'
 
-    --WRITING plugins
-    use("folke/zen-mode.nvim")
-    use {'reedes/vim-pencil'} -- Super-powered writing things
-    use {'tpope/vim-abolish'} -- Fancy abbreviation replacements
-    use {'junegunn/limelight.vim'} -- Highlights only active paragraph
-    use {'junegunn/goyo.vim'} -- Full screen writing mode
-    use {'reedes/vim-lexical'} -- Better spellcheck mappings
-    use {'reedes/vim-litecorrect'} -- Better autocorrections
-    use {'reedes/vim-textobj-sentence'} -- Treat sentences as text objects
-    use {'reedes/vim-wordy'} -- Weasel words and passive voice
+        -- for notes
+        use 'vimwiki/vimwiki'
 
-    
-  -- Required plugins
-  -- use 'nvim-treesitter/nvim-treesitter'
-  use 'stevearc/dressing.nvim'
-  use 'nvim-lua/plenary.nvim'
-  use 'MunifTanjim/nui.nvim'
-  use 'MeanderingProgrammer/render-markdown.nvim'
-
-  -- Optional dependencies
-  use 'hrsh7th/nvim-cmp'
-  use 'nvim-tree/nvim-web-devicons' -- or use 'echasnovski/mini.icons'
-  use 'HakonHarnes/img-clip.nvim'
-  use 'zbirenbaum/copilot.lua'
-  use 'github/copilot.vim'
-
-  -- Avante.nvim with build process
-  use {
-    'yetone/avante.nvim',
-    branch = 'main',
-    run = 'make',
-    config = function()
-      require('avante').setup()
-    end
-  }
+        --WRITING plugins
+        use("folke/zen-mode.nvim")
+        use {'reedes/vim-pencil'} -- Super-powered writing things
+        use {'tpope/vim-abolish'} -- Fancy abbreviation replacements
+        use {'junegunn/limelight.vim'} -- Highlights only active paragraph
+        use {'junegunn/goyo.vim'} -- Full screen writing mode
+        use {'reedes/vim-lexical'} -- Better spellcheck mappings
+        use {'reedes/vim-litecorrect'} -- Better autocorrections
+        use {'reedes/vim-textobj-sentence'} -- Treat sentences as text objects
+        use {'reedes/vim-wordy'} -- Weasel words and passive voice
 
 
+        -- Required plugins
+        -- use 'nvim-treesitter/nvim-treesitter'
+        use 'stevearc/dressing.nvim'
+        use 'nvim-lua/plenary.nvim'
+        use 'MunifTanjim/nui.nvim'
+        use 'MeanderingProgrammer/render-markdown.nvim'
 
-end)
+        -- Optional dependencies
+        use 'hrsh7th/nvim-cmp'
+        use 'nvim-tree/nvim-web-devicons' -- or use 'echasnovski/mini.icons'
+        use 'HakonHarnes/img-clip.nvim'
+        use 'zbirenbaum/copilot.lua'
+        use 'github/copilot.vim'
 
+        -- Avante.nvim with build process
+        use {
+            'yetone/avante.nvim',
+            branch = 'main',
+            run = 'make',
+            config = function()
+                require('avante').setup()
+            end
+        }
+    end)
+
+else
+    -- ordinary Neovim
+end

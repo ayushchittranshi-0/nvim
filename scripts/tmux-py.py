@@ -99,7 +99,7 @@ if __name__ == '__main__':
                         ]
                     },
                     {
-                        'name': 'frontend-server',
+                        'name': 'server',
                         'commands': [
                             'cd /Users/ayushchittranshi/Developer/jExamx',
                             'npm run dev',
@@ -198,7 +198,7 @@ if __name__ == '__main__':
                     ]
                 },
                 {
-                    'name': 'frontend-server',
+                    'name': 'server',
                     'commands': [
                     ]
                 },

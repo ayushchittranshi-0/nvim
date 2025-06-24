@@ -53,7 +53,7 @@ vim.keymap.set('n', '<leader>fg', function()
 end, { desc = "Telescope live grep with args" })
 
 
-local pc_type = os.getenv("pc_type")
+local pc_type = os.getenv("pc_type") or "work"
 -- Lua function to search in the parent directory of the current file using Telescope
 function TelescopeSearchParent()
     if pc_type == 'personal' then
