@@ -115,19 +115,21 @@ return require('packer').startup(function(use)
     use {'reedes/vim-textobj-sentence'} -- Treat sentences as text objects
     use {'reedes/vim-wordy'} -- Weasel words and passive voice
 
+    ----------------------------------------------------------------------
+    -- USED FOR AVANTE.NVIM
     
   -- Required plugins
   -- use 'nvim-treesitter/nvim-treesitter'
-  use 'stevearc/dressing.nvim'
-  use 'nvim-lua/plenary.nvim'
-  use 'MunifTanjim/nui.nvim'
-  use 'MeanderingProgrammer/render-markdown.nvim'
+  -- use 'stevearc/dressing.nvim'
+  -- use 'nvim-lua/plenary.nvim'
+  -- use 'MunifTanjim/nui.nvim'
+  -- use 'MeanderingProgrammer/render-markdown.nvim'
 
   -- Optional dependencies
-  use 'hrsh7th/nvim-cmp'
-  use 'nvim-tree/nvim-web-devicons' -- or use 'echasnovski/mini.icons'
-  use 'HakonHarnes/img-clip.nvim'
-  use 'zbirenbaum/copilot.lua'
+  -- use 'hrsh7th/nvim-cmp'
+  -- use 'nvim-tree/nvim-web-devicons' -- or use 'echasnovski/mini.icons'
+  -- use 'HakonHarnes/img-clip.nvim'
+  -- use 'zbirenbaum/copilot.lua'
 
   -- Avante.nvim with build process
   -- use {
@@ -139,6 +141,7 @@ return require('packer').startup(function(use)
   --   end
   -- }
 
+    ----------------------------------------------------------------------
   use {
       'github/copilot.vim',
       config = function()

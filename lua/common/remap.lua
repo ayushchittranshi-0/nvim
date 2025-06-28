@@ -78,7 +78,7 @@ function openFileInNewTab(filepath)
 end
 
 -- Read the pc_type variable
-local pc_type = os.getenv("pc_type")
+local pc_type = os.getenv("pc_type") or "work"
 
 -- You can now use the pc_type variable in your Lua code
 print("The pc_type variable value is: " .. pc_type)
