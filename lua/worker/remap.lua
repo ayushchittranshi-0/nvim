@@ -79,3 +79,19 @@ vim.keymap.set('n', '<Leader>q', ':wa<CR>:e<CR>', {
 })
 
 
+--Copilot configuration
+
+vim.keymap.set('i', '<M-\'>', 'copilot#Accept("\\<CR>")', {
+  expr = true,
+  replace_keycodes = false
+})
+vim.g.copilot_no_tab_map = true
+
+vim.keymap.set('i', '<M-.>', '<Plug>(copilot-accept-word)', {
+  desc = "Accept next word of Copilot suggestion"
+})
+
+-- Accept next line with Alt+L
+vim.keymap.set('i', '<M-,>', '<Plug>(copilot-accept-line)', {
+  desc = "Accept next line of Copilot suggestion"
+})

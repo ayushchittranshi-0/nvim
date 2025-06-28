@@ -1,4 +1,4 @@
-if [-f ~/.secret_env]; then 
+if [ -f ~/.secret_env ]; then 
     source ~/.secret_env
 fi
 

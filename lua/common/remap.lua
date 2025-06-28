@@ -17,6 +17,30 @@ vim.opt.scrolloff = 2
 vim.cmd('set nowrap!')
 vim.cmd('set nohlsearch')
 
+-- Web development languages (2 spaces)
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = {
+    "javascript",
+    "javascriptreact", 
+    "typescript",
+    "typescriptreact",
+    "jsx",
+    "tsx",
+    "json",
+    "html",
+    "css",
+    "scss",
+    "sass",
+    "vue",
+    "svelte"
+  },
+  callback = function()
+    vim.opt_local.tabstop = 2
+    vim.opt_local.softtabstop = 2
+    vim.opt_local.shiftwidth = 2
+    vim.opt_local.expandtab = true
+  end,
+})
 -- Set autocommand to execute splitLongLinesOnSave on BufWritePost
 -- vim.api.nvim_set_keymap('n', '<Leader>k', ':w<Esc>', { noremap = true, silent = true })
 -- vim.api.nvim_set_keymap('i', 'kk', '<Esc>:w<Esc>', { noremap = true, silent = true })

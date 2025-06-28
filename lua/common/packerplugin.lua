@@ -128,18 +128,23 @@ return require('packer').startup(function(use)
   use 'nvim-tree/nvim-web-devicons' -- or use 'echasnovski/mini.icons'
   use 'HakonHarnes/img-clip.nvim'
   use 'zbirenbaum/copilot.lua'
-  use 'github/copilot.vim'
 
   -- Avante.nvim with build process
-  use {
-    'yetone/avante.nvim',
-    branch = 'main',
-    run = 'make',
-    config = function()
-      require('avante').setup()
-    end
-  }
+  -- use {
+  --   'yetone/avante.nvim',
+  --   branch = 'main',
+  --   run = 'make',
+  --   config = function()
+  --     require('avante').setup()
+  --   end
+  -- }
 
+  use {
+      'github/copilot.vim',
+      config = function()
+        -- Configuration options (if any)
+      end
+    }
 
 
 end)
