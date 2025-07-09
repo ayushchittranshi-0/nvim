@@ -20,11 +20,11 @@ EnvGet, PCTypeValue, pc_type
 Run, j1.ahk
 Run, jc.ahk
 Sleep 4000
-Send !j
+Send !n
 Run, jj.ahk
 Run, ji.ahk
 Sleep 4000
-Send !j
+Send !n
 Run, j3.ahk
 Run, jo.ahk
 Run, jm.ahk
@@ -35,10 +35,10 @@ Run, js.ahk
 Run, jv.ahk
 ;Run, jy.ahk
 Sleep 4000
-Send !j
+Send !n
 ;Run, uu.ahk
 ;Run, ui.ahk
 Sleep 4000
-Send !j
+Send !n
 Run, jn.ahk
 ;Run, j5.ahk
