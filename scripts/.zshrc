@@ -1,9 +1,9 @@
-if [ -f ~/.secret_env ]; then 
-    echo "Loading secret env file"
-    source ~/.secret_env
-else
-    echo "Secret env file not found"
-fi
+# if [ -f ~/.secret_env ]; then 
+#     echo "Loading secret env file"
+#     # source ~/.secret_env
+# else
+#     echo "Secret env file not found"
+# fi
 
 export pc_type="work"
 alias ntw="python3 ~/.config/nvim/scripts/tmux-py.py ntw"
