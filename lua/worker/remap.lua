@@ -105,3 +105,7 @@ vim.keymap.set('i', '<M-,>', '<Plug>(copilot-accept-line)', {
 })
 
 
+vim.g.copilot_filetypes = {
+  ["*"] = true,
+  vimwiki = false,
+}
