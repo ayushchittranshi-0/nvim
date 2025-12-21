@@ -65,11 +65,12 @@ return require('packer').startup(function(use)
 
     -- tree sitter for linting highlights
     use {
-        'nvim-treesitter/nvim-treesitter',
-        run = function()
-            local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
-            ts_update()
-        end,} 
+      'nvim-treesitter/nvim-treesitter',
+      run = ':TSUpdate',
+      config = function()
+        require("worker.plugins.treesitter")
+      end
+    }
     -- use("nvim-treesitter/nvim-treesitter-context")
 
     --Others useful plugins not explored
