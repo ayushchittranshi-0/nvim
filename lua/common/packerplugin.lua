@@ -11,7 +11,7 @@ vim.filetype.add({ extension = { ejs = "ejs" } })
 
 -- Only required if you have packer configured as `opt`
 --
-if vim.g.vscode then
+if true then
     vim.cmd [[packadd packer.nvim]]
 
     return require('packer').startup(function(use)
