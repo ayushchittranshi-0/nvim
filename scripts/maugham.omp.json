@@ -25,6 +25,15 @@
           "properties": {
             "cache_duration": "none"
           },
+          "template": "{{ if .Venv }}({{ .Venv }}) {{ end }}",
+          "foreground": "green",
+          "type": "python",
+          "style": "plain"
+        },
+        {
+          "properties": {
+            "cache_duration": "none"
+          },
           "template": "{{ .UserName }}@{{ .HostName }} ",
           "foreground": "p:blue",
           "type": "session",

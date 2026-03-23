@@ -18,6 +18,14 @@ lsp_zero.on_attach(function(client, bufnr)
     vim.keymap.set('i', '<C-b>', vim.lsp.buf.hover, opts)
     vim.keymap.set('n', '<C-h>', vim.lsp.buf.signature_help, opts)
 end)
+
+-- disable copilot on enter
+vim.api.nvim_create_autocmd("VimEnter", {
+  callback = function()
+    vim.cmd("Copilot disable")
+  end,
+})
+
 require'lspconfig'.eslint.setup{}
 require'lspconfig'.pyright.setup{}
 require'lspconfig'.ts_ls.setup{}

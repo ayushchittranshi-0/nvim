@@ -22,8 +22,13 @@ alias pvimconfig='python3 ~/.config/nvim/scripts/tmux-py.py pvimconfig'
 alias tnew='python3 ~/.config/nvim/scripts/tmux-py.py -new'
 
 # configure oh-my-posh
-eval "$(oh-my-posh init zsh)"
-eval "$(oh-my-posh init bash --config ~/.config/nvim/scripts/maugham.omp.json)"
+eval "$(oh-my-posh init zsh --config ~/.config/nvim/scripts/maugham.omp.json)"
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init - zsh)"
+export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+
+# Added by Antigravity
+export PATH="/Users/ayushchittranshi/.antigravity/antigravity/bin:$PATH"
+export PATH="$PATH:/Users/ayushchittranshi/.cargo/bin"
