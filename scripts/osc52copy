@@ -1,0 +1,4 @@
+#!/bin/bash
+buf=$(cat | base64 | tr -d '\n')
+tty=$(tmux display-message -p '#{client_tty}')
+printf '\e]52;c;%s\a' "$buf" > "$tty"
