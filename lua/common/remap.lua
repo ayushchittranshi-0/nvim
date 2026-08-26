@@ -16,6 +16,7 @@ vim.opt.expandtab = true
 vim.opt.scrolloff = 2
 vim.cmd('set nowrap!')
 vim.cmd('set nohlsearch')
+vim.keymap.set('t', 'jj', [[<C-\><C-n>]])
 
 -- Web development languages (2 spaces)
 vim.api.nvim_create_autocmd("FileType", {

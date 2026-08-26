@@ -32,3 +32,11 @@ export PATH="$HOME/.local/bin:$PATH"
 # Added by Antigravity
 export PATH="/Users/ayushchittranshi/.antigravity/antigravity/bin:$PATH"
 export PATH="$PATH:/Users/ayushchittranshi/.cargo/bin"
+
+autoload -z edit-command-line
+zle -N edit-command-line
+bindkey "^X^E" edit-command-line
+
+export EDITOR="nvim"
+bindkey -e
+export PATH="/opt/homebrew/opt/openjdk@21/bin:$PATH"
