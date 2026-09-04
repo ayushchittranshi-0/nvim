@@ -1,8 +1,10 @@
 -- Making powerline fonts work in vim.
 vim.g.airline_powerline_fonts = 1
 
--- Disabling mouse in vim.
-vim.opt.mouse = ""
+-- Mouse in every mode: makes the tabline's %<n>T click regions live
+-- (see ~/.config/nvim/lua/worker/plugins/tabline.lua), plus split resizing
+-- by dragging the border.
+vim.opt.mouse = "a"
 
 -- Google coding guide recommends length of a line to be a maximum of 80 
 -- characters hence this line below to give the user a visual indicator of when
